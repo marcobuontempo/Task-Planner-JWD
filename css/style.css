@@ -36,6 +36,7 @@ nav {
   grid-column: 1;
   grid-row: 2 / 3;
   background-color: #C4C4C4;
+  
 }
 
 nav ul {
@@ -47,7 +48,6 @@ nav ul {
 
 nav li {
   margin: 25px 10px;
-  padding: 15px;
   font-size: 1.4rem;
   background-color: black;
   border-radius: 15px;
@@ -56,14 +56,15 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: white;  
+  display: block;  
+  padding: 15px;
 }
 
 nav a:hover {
   color: #C38181;
   font-size: 1.45rem;
 }
-
 
 
 
