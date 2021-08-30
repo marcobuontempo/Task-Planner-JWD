@@ -8,64 +8,58 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
 
     <title>T2 Task Planner</title>
   </head>
 
 
-
   <body>
-
+    
     <!-- Top Black Bar -->
-    <div class="topbar"></div>
+    <header class="topbar"></header>
 
-    <nav class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-              <svg class="bi me-2" width="16" height="16"></svg><use xlink:href="#home"></use></svg>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-              CREATE
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-              TO-DO
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-              IN-PROGRESS
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-              REVIEW
-            </a>
-          </li>
+    <!-- Sidebar (Navigation Bar) -->
+      <nav>
+        <ul>
+          <li><a href="#">CREATE</a></li>
+          <li><a href="#">TO-DO</a></li>
+          <li><a href="#">IN-PROGRESS</a></li>
+          <li><a href="#">REVIEW</a></li>
+          <li><a href="#">DONE</a></li>
         </ul>
-        </div>
-    </nav>
-    
-    
-    <!-- this is supposed to be the body/white part -->
+      </nav>
+
+
+    <!-- Card Container -->
+      <section class="card-container">
+
+      <!-- THIS IS THE RED/PINK SECTION OF THE WEBPAGE AND WILL BE THE CONTAINER FOR ALL OF THE CARDS. WE STILL NEED TO MAKE ".CARD-CONTAINER" A FLEXBOX IN CSS STYLES TO ORGANISE THE LAYOUT OF THE CARDS -->
+        
+
+      </section>
 
     
     
     
     
     
+    <!-- Footer -->
+    <footer>
+      <ul>
+          <li class="t2planner">T2 TASK PLANNER ©</li>
+          <li class="footerclock">Date/Time Placeholder</li>
+          <li class="createdby">Created by da boiz</li>
+      </ul>
+
+    </footer>
+  
+
+
     
     
-    <!-- Optional JavaScript; choose one of the two! -->
+    
+    <!-- BOOTSTRAP INFO: Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -75,21 +69,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     -->
+  
   </body>
-
-
-
-  <!-- Footer -->
-  <footer>
-    <ul>
-        <li class="t2planner">T2 TASK PLANNER ©</li>
-        <li class="footerclock">Date/Time Placeholder</li>
-        <li class="createdby">Created by da boiz</li>
-    </ul>
-
-  </footer>
-
-
-
 
 </html>
