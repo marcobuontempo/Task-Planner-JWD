@@ -5,7 +5,14 @@
 
 html, body {
   height: 100%;
+  background-color: #C38181;
 }
+
+
+
+
+
+
 
 
 /* Top Black Bar */
@@ -19,12 +26,15 @@ div.topbar {
   padding: 10px;  
 }
 
-.mainbody {
-width: 1000px;
-height: 1000px;
-position: center;
-color: black;
-}
+
+
+
+
+
+
+
+/* Sidebar Navigation */
+
 nav {
     height: 100%;
     width: 200px;
@@ -34,6 +44,31 @@ nav ul {
   position: absolute;
   top: 80px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Card Container */
+
+.mainbody {
+  width: 1000px;
+  height: 1000px;
+  position: center;
+  color: black;
+  }
+
+
+
+
+
+
 
 
 
@@ -48,9 +83,11 @@ nav ul {
   padding: 10px;  
   text-align: center;
   font-style: italic;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
   }
 
-  footer.li {
+  footer li {
     
   }
 
