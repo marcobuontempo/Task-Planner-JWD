@@ -33,17 +33,63 @@
       </nav>
 
 
-    <!-- Card Container -->
+    <!-- Main Card Container -->
       <section class="card-container">
 
       <!-- THIS IS THE RED/PINK SECTION OF THE WEBPAGE AND WILL BE THE CONTAINER FOR ALL OF THE CARDS. WE STILL NEED TO MAKE ".CARD-CONTAINER" A FLEXBOX IN CSS STYLES TO ORGANISE THE LAYOUT OF THE CARDS -->
         
+      
+      <!-- Task Creation Form -->
+        <section class="task-form">
+          <form>
+            <!-- Form Card Title -->
+            <input type="text" id="card-title" class="card-input" name="" placeholder="title..."></input>
+            
+            <!-- Form Card Description -->
+            <textarea id="card-desc" class="card-input" name="" placeholder="description..."></textarea>
+           
+            <!-- Form Card Logo -->
+            <img src="" id="card-logo" class="card-input">
+           
+            <!-- Form Card Assignee -->
+            <input type="text" id="card-assignee" name="" class="card-input" placeholder="assignee..."></input>
+           
+            <!-- Form Card Due Date -->
+            <input type="date" id="card-due" name="" class="card-input"></input>
+           
+            <!-- Form Card Status Radio Buttons -->
+            <section class="card-status-container card-input">
+              <p>STATUS</p><br>
+              <label for="in-progress">
+                <input type="radio" id="in-progress" name="card-status" value="in-progress">IN-PROGRESS
+              </label><br>
+              <label for="to-do">
+                <input type="radio" id="to-do" name="card-status" value="to-do">TO-DO
+              </label><br>
+              <label for="review">
+                <input type="radio" id="review" name="card-status" value="review">REVIEW
+              </label><br>
+              <label for="done">
+                <input type="radio" id="done" name="card-status" value="done">DONE
+              </label>
+            </section>
+           
+            <!-- Form Card "Delete Task" Button -->
+            <button type="button" id="card-delete" name="" class="card-input">DELETE TASK</button>
+           
+            <!-- Form Card "Save Task" Button -->
+            <button type="button" id="card-save" name="" class="card-input">SAVE TASK</button>
+          </form>
+        </section>
+
+
+
 
       </section>
 
     
     
-    
+
     
     
     <!-- Footer -->
