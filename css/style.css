@@ -51,8 +51,18 @@ nav li {
   font-size: 1.4rem;
   background-color: black;
   border-radius: 15px;
-
 }
+
+.nav-button {
+  text-decoration: none;
+  color: white;
+  background-color: black;  
+  border: none;
+  display: block;  
+  padding: 15px;
+  width: 100%;
+  border-radius: 15px;
+} 
 
 nav a {
   text-decoration: none;
@@ -62,6 +72,11 @@ nav a {
 }
 
 nav a:hover {
+  color: #C38181;
+  font-size: 1.45rem;
+}
+
+nav button:hover {
   color: #C38181;
   font-size: 1.45rem;
 }
@@ -87,7 +102,7 @@ nav a:hover {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(10, 1fr);
       box-shadow: -25px -20px;
-      display: none;
+      visibility: hidden;
     }
 
     .card-input {
