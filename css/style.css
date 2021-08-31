@@ -103,18 +103,23 @@ nav button:hover {
       grid-template-rows: repeat(10, 1fr);
       box-shadow: -25px -20px;
       visibility: hidden;
+      position: fixed;
+      left: 300px;
+      top: 70px;
     }
 
     .card-input {
       background-color: black;
       color: white;
       margin: 5px;
+      padding: 0.7em;
     }
 
     #card-title {
       grid-column: 1 / 5;
       grid-row: 1;
       margin: 10px;
+      font-size: 1.5em;
     }
 
     #card-desc {
@@ -161,7 +166,7 @@ nav button:hover {
     .card-status-container label {
       width: 80%;
       text-align: left;
-      padding: 10px;
+      padding: 5px;
       margin: 5px 0;
       border-radius: 15px;
     }
