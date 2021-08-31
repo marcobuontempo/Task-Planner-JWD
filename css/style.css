@@ -51,8 +51,18 @@ nav li {
   font-size: 1.4rem;
   background-color: black;
   border-radius: 15px;
-
 }
+
+.nav-button {
+  text-decoration: none;
+  color: white;
+  background-color: black;  
+  border: none;
+  display: block;  
+  padding: 15px;
+  width: 100%;
+  border-radius: 15px;
+} 
 
 nav a {
   text-decoration: none;
@@ -62,6 +72,11 @@ nav a {
 }
 
 nav a:hover {
+  color: #C38181;
+  font-size: 1.45rem;
+}
+
+nav button:hover {
   color: #C38181;
   font-size: 1.45rem;
 }
@@ -103,19 +118,24 @@ nav a:hover {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(10, 1fr);
       box-shadow: -25px -20px;
-      display: none;
+      visibility: hidden;
+      position: fixed;
+      left: 300px;
+      top: 70px;
     }
 
     .card-input {
       background-color: black;
       color: white;
       margin: 5px;
+      padding: 0.7em;
     }
 
     #card-title {
       grid-column: 1 / 5;
       grid-row: 1;
       margin: 10px;
+      font-size: 1.5em;
     }
 
     #card-desc {
@@ -162,7 +182,7 @@ nav a:hover {
     .card-status-container label {
       width: 80%;
       text-align: left;
-      padding: 10px;
+      padding: 5px;
       margin: 5px 0;
       border-radius: 15px;
     }
