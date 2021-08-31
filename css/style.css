@@ -87,9 +87,25 @@ nav button:hover {
 
   .card-container {
     background-color: #C38181;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  
     }
+    .card {
+      margin: 50px 50px;
+      box-shadow: 0 3px 15px 0 #aaa;
+      cursor: pointer;
+      height: 450px;
+      position: relative;
+      width: 350px;
+    }
+    .card-subtitle {
+      text-align: center;
+      color: chartreuse;
+    }
+    .
 
-
+    
 
 
 /* Task Submission Form */
