@@ -92,10 +92,10 @@ nav button:hover {
   
     }
     .card {
-      margin: 50px 50px;
+      margin: 20px 50px;
       box-shadow: 0 3px 15px 0 #aaa;
       cursor: pointer;
-      height: 450px;
+      height: 400px;
       position: relative;
       width: 350px;
     }
@@ -103,14 +103,13 @@ nav button:hover {
       text-align: center;
       color: chartreuse;
     }
-    .
 
     
 
 
 /* Task Submission Form */
 
-    form {
+    #task-form {
       background-color: white;
       height: 800px;
       width: 900px;
@@ -122,6 +121,8 @@ nav button:hover {
       position: fixed;
       left: 300px;
       top: 70px;
+      border: 2px solid black;
+      border-radius: 1%;
     }
 
     .card-input {
