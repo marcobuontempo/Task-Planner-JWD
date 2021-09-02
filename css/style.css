@@ -67,8 +67,15 @@ body {
     width: 35px;
     height: 5px;
     background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
+    margin: 6px 10px;
+  }
+
+  div.bar1 {
+    margin-top: 10px;
+  }
+
+  div.bar3 {
+    margin-bottom: 10px;
   }
 
     /* Rotate first bar */
@@ -93,6 +100,57 @@ body {
       visibility: hidden;
     }
 
+
+    nav {
+      color: white;
+
+    }
+    nav ul {
+      list-style-type: none;
+      text-align: center;
+      margin-top: 30px;
+      width: 200px;
+  
+  }
+  
+  nav li {
+    margin: 25px 10px;
+    font-size: 1.2rem;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 15px;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: white;  
+    border: none;
+    display: block;  
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    background: none;
+    transition-duration: 0.2s;
+  } 
+  
+  nav a {
+    text-decoration: none;
+    color: white;  
+    display: block;  
+    padding: 15px;
+    transition-duration: 0.4s;
+  }
+  
+  nav a:hover {
+    color: #C38181;
+    font-size: 1.4rem;
+  }
+  
+  nav button:hover {
+    color: #C38181;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
 
 
 /* Cards */
