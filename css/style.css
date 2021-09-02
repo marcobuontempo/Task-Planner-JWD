@@ -105,26 +105,52 @@ body {
       color: white;
 
     }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-
     nav ul {
-      margin-left: 10px;
-    }
-
-    nav li {
-      padding: 20px;
+      list-style-type: none;
       text-align: center;
-      font-weight: bold;
-      font-size: 1.5rem;
-      background-color: grey;
-      padding: 10px;
-      margin: 15px;
-      border-radius: 10px;
-    }
+      margin-top: 30px;
+      width: 200px;
+  
+  }
+  
+  nav li {
+    margin: 25px 10px;
+    font-size: 1.2rem;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 15px;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: white;  
+    border: none;
+    display: block;  
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    background: none;
+    transition-duration: 0.2s;
+  } 
+  
+  nav a {
+    text-decoration: none;
+    color: white;  
+    display: block;  
+    padding: 15px;
+    transition-duration: 0.4s;
+  }
+  
+  nav a:hover {
+    color: #C38181;
+    font-size: 1.4rem;
+  }
+  
+  nav button:hover {
+    color: #C38181;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
 
 
 /* Cards */
