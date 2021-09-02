@@ -34,11 +34,6 @@ body {
     flex: 0 1 30px;
   }
 
-  .container {
-    display: inline-block;
-    cursor: pointer;
-  }
-
 
 
 /* Header */
@@ -63,32 +58,32 @@ body {
 /* Side Navigation Bar */
 
   /* Menu Toggle (Burger Icon) */
-    .burger-icon div {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 10px;
-  }
-
-  div.bar1 {
+  .menu-button {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
     margin-top: 10px;
   }
-
-  div.bar3 {
-    margin-bottom: 10px;
-  }
-
+  
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
     /* Rotate first bar */
     .change .bar1 {
       -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
       transform: rotate(-45deg) translate(-9px, 6px) ;
     }
-
+    
     /* Fade out the second bar */
     .change .bar2 {
       opacity: 0;
     }
-
+    
     /* Rotate last bar */
     .change .bar3 {
       -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
@@ -117,7 +112,7 @@ body {
   nav li {
     margin: 25px 10px;
     font-size: 1.2rem;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.9);
     border-radius: 15px;
   }
   
@@ -131,7 +126,6 @@ body {
     border-radius: 15px;
     font-size: 1.2rem;
     background: none;
-    transition-duration: 0.2s;
   } 
   
   nav a {
@@ -139,7 +133,6 @@ body {
     color: white;  
     display: block;  
     padding: 15px;
-    transition-duration: 0.4s;
   }
   
   nav a:hover {
@@ -170,6 +163,8 @@ body {
     margin: 25px;
     background-color: white;
     position: relative;
+    border-radius: 10px;
+    border: 1px solid black;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -189,10 +184,6 @@ body {
     position: absolute;
     visibility: hidden;
   }
-  
-  .card p, .card h1 {
-    width: 100%;
-  }
 
   .card h1 {
     font-weight: bold;
@@ -200,8 +191,17 @@ body {
     padding: 10px;
   } 
 
-  .card p {
+  .card-desc {
+    text-align: center;
+    padding: 10px 0px;
+  }
 
+  .card-status {
+    bottom: 35px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0px;
   }
 
   .card-footer {
@@ -212,6 +212,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    border-radius: 0px 0px 10px 10px;
   }
 
   .card-due-date, .card-assignee {
