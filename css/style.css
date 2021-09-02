@@ -100,18 +100,23 @@ body {
   .cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .card {
     /* Add shadows to create the "card" effect */
     width: 330px;
+    height: 375px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    margin: 30px;
+    margin: 25px;
+    background-color: white;
   }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: -25px -25px rgba(0,0,0,0.75);
+    margin-left: 35px;
+    margin-top: 35px;
   }
   
   /* Add some padding inside the card container */
