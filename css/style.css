@@ -1,7 +1,3 @@
-/* * {
-  outline: 1px solid red;
-} */
-
 html,
 body {
   height: 100%;
@@ -17,15 +13,11 @@ body {
     height: 100%;
   }
 
-  .box .row {
-    border: 1px dotted grey;
-  }
-
   .box .row.header {
     flex: 0 1 30px;
   }
 
-  .box .row.card-container {
+  .box .row.main-container {
     flex: 1 1 auto;
     background-color: #C38181;
   }
@@ -34,17 +26,11 @@ body {
     flex: 0 1 30px;
   }
 
-  .container {
-    display: inline-block;
-    cursor: pointer;
-  }
-
 
 
 /* Header */
 
   header {
-    height: 100%; 
     background-color: black;
     display: flex;
     align-items: center;
@@ -55,7 +41,6 @@ body {
     text-align: center;
     color: white;
     padding: 5px;
-    ;
   }
 
 
@@ -63,94 +48,97 @@ body {
 /* Side Navigation Bar */
 
   /* Menu Toggle (Burger Icon) */
-    .burger-icon div {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 10px;
-  }
-
-  div.bar1 {
-    margin-top: 10px;
-  }
-
-  div.bar3 {
-    margin-bottom: 10px;
-  }
-
-    /* Rotate first bar */
-    .change .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-      transform: rotate(-45deg) translate(-9px, 6px) ;
+    .menu-button {
+      display: inline-block;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-top: 10px;
     }
-
-    /* Fade out the second bar */
-    .change .bar2 {
-      opacity: 0;
+  
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
     }
+    
+          /* Rotate first bar */
+          .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-45deg) translate(-9px, 6px) ;
+          }
+          
+          /* Fade out the second bar */
+          .change .bar2 {
+            opacity: 0;
+          }
+          
+          /* Rotate last bar */
+          .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -8px) ;
+          }
 
-    /* Rotate last bar */
-    .change .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-      transform: rotate(45deg) translate(-8px, -8px) ;
-    }
-
+    /* Position of Side Bar */
     #sidebar {
       position: fixed;
       visibility: hidden;
     }
 
-
     nav {
       color: white;
-
+      position: relative;
+      z-index: 1;
     }
+
+    /* Side Bar Styling */
     nav ul {
       list-style-type: none;
       text-align: center;
       margin-top: 30px;
       width: 200px;
+    }
   
-  }
+    nav li {
+      margin: 25px 10px;
+      font-size: 1.2rem;
+      background-color: rgba(0,0,0,0.98);
+      box-shadow: 0 0 15px black;
+      border: 1px solid white;
+      border-radius: 15px;
+    }
+    
+    .nav-button {
+      text-decoration: none;
+      color: white;  
+      border: none;
+      display: block;  
+      padding: 15px;
+      width: 100%;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      background: none;
+    } 
+    
+    nav a {
+      text-decoration: none;
+      color: white;  
+      display: block;  
+      padding: 15px;
+    }
   
-  nav li {
-    margin: 25px 10px;
-    font-size: 1.2rem;
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 15px;
-  }
+    /* Hover Effects on Sidebar Elements */
+    nav a:hover, nav button:hover  {
+      color: #C38181;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    nav li:hover {
+      box-shadow: 0 0 15px white;
+    }
   
-  .nav-button {
-    text-decoration: none;
-    color: white;  
-    border: none;
-    display: block;  
-    padding: 15px;
-    width: 100%;
-    border-radius: 15px;
-    font-size: 1.2rem;
-    background: none;
-    transition-duration: 0.2s;
-  } 
-  
-  nav a {
-    text-decoration: none;
-    color: white;  
-    display: block;  
-    padding: 15px;
-    transition-duration: 0.4s;
-  }
-  
-  nav a:hover {
-    color: #C38181;
-    font-size: 1.4rem;
-  }
-  
-  nav button:hover {
-    color: #C38181;
-    font-size: 1.4rem;
-    cursor: pointer;
-  }
 
 
 /* Cards */
@@ -160,28 +148,92 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  
+  /* Styling and Sizing of Entire Card Container */
   .card {
-    /* Add shadows to create the "card" effect */
     width: 330px;
     height: 375px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.6);
     transition: 0.3s;
     margin: 25px;
-    background-color: white;
+    position: relative;
+    border-radius: 10px;
   }
   
-  /* On mouse-over, add a deeper shadow */
+  /* Hover Effects for Cards (including pop-out effect) */
   .card:hover {
     box-shadow: -25px -25px rgba(0,0,0,0.75);
     margin-left: 35px;
     margin-top: 35px;
+    cursor: pointer;
+  }
+
+  /* Hover Effect to show Card Status and Edit Icon (pencil) */
+  .card:hover .card-status {
+    visibility: visible;
+  }
+  .card:hover .edit-icon {
+    visibility: visible;
   }
   
-  /* Add some padding inside the card container */
-  .container {
+  /* Sizing/Styling of White Main Section of Card */
+  .card-container {
+    height: 335px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  /* Edit Icon for Cards (Pencil Image) */
+  .edit-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0.7;
+    visibility: hidden;
+  }
+
+
+  /* Card Styling and Positioning (for elements inside Main Section [.card-container]) */
+  .card h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 10px;
+    text-shadow: 2px 2px rgba(0,0,0,0.2);
+  } 
+  .card-desc {
+    text-align: center;
+    padding: 10px 0px;
+    font-style: italic;
+    color: grey;
+  }
+  .card-status {
+    bottom: 40px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0px;
+    visibility: hidden;
+  }
+
+  /* Card Footer Positioning and Styling */
+  .card-footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0px 0px 10px 10px;
 
   }
-  
+  .card-due-date, .card-assignee {
+    padding: 10px;
+    font-style: italic;
+  }
+
+
 
 /* Footer */
 
@@ -193,13 +245,11 @@ body {
       footer ul {
         display: flex;
         width: 100%;
-        height: 100%;
         align-items: center;
         justify-content: space-between;
       }
     
       footer li {
           color: white;
-          padding: 5px;
           font-style: italic;
       }
