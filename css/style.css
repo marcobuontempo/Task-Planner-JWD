@@ -67,8 +67,15 @@ body {
     width: 35px;
     height: 5px;
     background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
+    margin: 6px 10px;
+  }
+
+  div.bar1 {
+    margin-top: 10px;
+  }
+
+  div.bar3 {
+    margin-bottom: 10px;
   }
 
     /* Rotate first bar */
@@ -93,6 +100,31 @@ body {
       visibility: hidden;
     }
 
+
+    nav {
+      color: white;
+
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul {
+      margin-left: 10px;
+    }
+
+    nav li {
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      background-color: grey;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 10px;
+    }
 
 
 /* Cards */
