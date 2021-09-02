@@ -25,7 +25,7 @@ body {
     flex: 0 1 30px;
   }
 
-  .box .row.card-container {
+  .box .row.main-container {
     flex: 1 1 auto;
     background-color: #C38181;
   }
@@ -103,6 +103,8 @@ body {
 
     nav {
       color: white;
+      position: relative;
+      z-index: 1;
 
     }
     nav ul {
@@ -110,7 +112,6 @@ body {
       text-align: center;
       margin-top: 30px;
       width: 200px;
-  
   }
   
   nav li {
@@ -168,6 +169,7 @@ body {
     transition: 0.3s;
     margin: 25px;
     background-color: white;
+    position: relative;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -178,9 +180,48 @@ body {
   }
   
   /* Add some padding inside the card container */
-  .container {
+  .card-container {
+    height: 100%;
+  }
+  
+  /* Currently hidden. Need to make it positioned on top-right of card */
+  .edit-icon {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .card p, .card h1 {
+    width: 100%;
+  }
+
+  .card h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 10px;
+  } 
+
+  .card p {
 
   }
+
+  .card-footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-due-date, .card-assignee {
+    padding: 10px;
+    font-style: italic;
+  }
+
+
+
+
   
 
 /* Footer */
