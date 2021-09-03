@@ -163,8 +163,7 @@ body {
   /* Hover Effects for Cards (including pop-out effect) */
   .card:hover {
     box-shadow: -25px -25px rgba(0,0,0,0.75);
-    margin-left: 35px;
-    margin-top: 35px;
+    margin: 35px 15px 15px 35px;
     cursor: pointer;
   }
 
