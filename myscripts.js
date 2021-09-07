@@ -18,7 +18,7 @@
             } else {
                 x.style.visibility = "visible";
             }
-    }
+        }
 
 // Date/Time
     function display_ct6() {

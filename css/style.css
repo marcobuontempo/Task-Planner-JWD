@@ -248,11 +248,9 @@ body {
     left: 100px;
     visibility: hidden;
     background-color: white;
+    text-align: center;
+    border: 1px solid black;
   }
-
-#task-form {
-  text-align: center;
-}
 
 #task-form input, #task-form textarea {
   box-sizing: border-box;
