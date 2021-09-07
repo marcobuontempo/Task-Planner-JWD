@@ -263,9 +263,10 @@ body {
     background-color: white;
     text-align: center;
     border: 1px solid black;
+    border-radius: 10px;
   }
 
-#task-form input, #task-form textarea {
+form input, form textarea {
   box-sizing: border-box;
   margin: 5px 0px;
   padding: 10px;
@@ -338,10 +339,26 @@ label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"]
 
 .form-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .form-footer input[type="button"] {
+  width: 100%;
+}
+
+input[value="Delete Task"] {
+  background-color: firebrick;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+  width: 100%;
+}
+
+input[value="Save Task"] {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
   width: 100%;
 }
 
@@ -367,11 +384,11 @@ label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"]
     .form-footer {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      align-items: center;
     }
 
     .form-footer input[type="button"] {
-      width: 80%;
+      width: 90%;
     }
 
     #task-form {
