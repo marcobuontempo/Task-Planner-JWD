@@ -363,6 +363,11 @@ label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"]
       width: 80%;
     }
 
+    #task-form {
+      left: 30px;
+    }
+  
+
     /* Hide Radio Buttons and Show Select Menu */
       .right-col-input-radio {
         display: none;
