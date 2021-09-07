@@ -354,6 +354,14 @@ input[value="Delete Task"] {
   width: 100%;
 }
 
+input[value="Delete Task"]:hover{
+  cursor: pointer;
+}
+
+input[value="Save Task"]:hover{
+  cursor: pointer;
+}
+
 input[value="Save Task"] {
   background-color: green;
   color: white;

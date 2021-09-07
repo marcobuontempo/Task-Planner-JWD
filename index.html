@@ -35,7 +35,7 @@
               <!-- Sidebar Navigation Start -->
       <nav id="sidebar">
         <ul>
-          <li><button type="button" onclick="toggleTaskForm()" class="nav-button">CREATE</button></li>
+          <li><button type="button" onclick="toggleTaskForm(), toggleMenu(this)" class="nav-button">CREATE</button></li>
           <li><a href="list.html">TO-DO</a></li>
           <li><a href="prog.html">IN-PROGRESS</a></li>
           <li><a href="review.html">REVIEW</a></li>
@@ -216,7 +216,7 @@
             <!-- Bottom Row -->
             <div class="form-row form-footer">
               <!-- Delete Button -->
-              <input type="button" value="Delete Task">
+              <input type="button" onclick="toggleTaskForm()" value="Delete Task">
               <!-- Save Task Button -->
               <input type="button" value="Save Task">
             </div>
