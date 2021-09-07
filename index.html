@@ -44,7 +44,7 @@
       </nav>
       <!-- Sidebar Navigation End -->
 
-        <div class="centered">
+        <div>
  
           <section class="cards">
             
@@ -155,6 +155,72 @@
           </div>
           </section>
         </div>
+
+        <section>
+          <form id="task-form">
+            <!-- Title -->
+            <div class="form-row">
+              <label for="form-title">Title</label>
+              <input type="text" id="form-title" name="form-title">
+            </div>
+    
+            <!-- Middle Section Container -->
+            <div class="form-row middle-form">
+              <!-- Description -->
+                <div id="desc-container">
+                  <label for="form-desc">Description</label>
+                  <textarea id="form-desc" name="form-desc"></textarea>
+                </div>
+    
+              <!-- Right Column Container Start -->
+                <div class="right-col-form">
+                  <!-- Assignee -->
+                  <div class="right-col-input">          
+                    <label for="form-assignee">Assignee</label>
+                    <input type="text" id="form-assignee" name="form-assignee">
+                  </div>
+                  <!-- Due Date -->
+                  <div class="right-col-input">
+                    <label for="form-due">Due Date</label>
+                    <input type="date" id="form-due" name="form-due">
+                  </div>
+                  <!-- Status -->
+                    <!-- Radio Buttons for Bigger Screens -->
+                      <div class="right-col-input-radio">
+                        <p>Status</p>
+                        <input type="radio" id="form-in-progress" name="form-status" value="in-progress">
+                        <label for="form-in-progress">In-Progress</label><br>
+                        <input type="radio" id="form-to-do" name="form-status" value="to-do">
+                        <label for="form-to-do">To-do</label><br>
+                        <input type="radio" id="form-review" name="form-status" value="review">
+                        <label for="form-review">Review</label><br>
+                        <input type="radio" id="form-done" name="form-status" value="done">
+                        <label for="form-done">Done</label><br>
+                      </div>
+                    <!-- Select Menu for Smaller Screens -->
+                      <div class="right-col-input-select">
+                        <label for="form-status-select">Status</label>
+                        <select name="form-status" id="form-status-select">
+                          <option value="in-progress">In-Progress</option>
+                          <option value="to-do">To-Do</option>
+                          <option value="review">Review</option>
+                          <option value="done">Done</option>
+                        </select>
+                      </div>
+                </div>
+                <!-- Right Column Container End -->
+            </div>
+            <!-- Middle Section Container End -->
+    
+            <!-- Bottom Row -->
+            <div class="form-row form-footer">
+              <!-- Delete Button -->
+              <div><input type="button" value="Delete Task"></div>
+              <!-- Save Task Button -->
+              <div><input type="button" value="Save Task"></div>
+            </div>
+          </form>
+        </section>
     
       <footer class="row footer">
         <ul>

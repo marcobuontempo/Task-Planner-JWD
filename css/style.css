@@ -233,6 +233,148 @@ body {
   }
 
 
+/* Task Form */
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 80%;
+    height: 90%;
+    max-height: 900px;
+    z-index: 2;
+    position: fixed;
+    top: 40px;
+    left: 100px;
+    visibility: hidden;
+    background-color: white;
+  }
+
+#task-form {
+  text-align: center;
+}
+
+#task-form input, #task-form textarea {
+  box-sizing: border-box;
+  margin: 5px 0px;
+  padding: 10px;
+}
+
+.form-row label, .form-row p, .form-row input[type="button"] {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+label[for="form-title"] {
+  padding-right: 15px;
+}
+
+.form-row {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+#form-assignee, #form-due, #form-status {
+  width: 100%;
+}
+
+#form-title {
+  width: 80%;
+}
+
+.middle-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 90%;
+}
+
+#desc-container {
+  width: 60%;
+  padding: 10px;
+}
+
+#form-desc {
+  width: 100%;
+  height: 95%;
+}
+
+.right-col-form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.right-col-input-radio {
+  margin: 20px 0px;
+}
+
+.right-col-input-select {
+  display: none;
+}
+
+#task-form input[type="radio"] {
+  margin: 10px 0px;
+  font-weight: normal;
+}
+
+label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"], label[for="form-done"] {
+  font-weight: normal;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-footer input[type="button"] {
+  width: 100%;
+}
+
+
+/* Change website responsive on <500px width screens  */
+  @media only screen and (max-width: 500px) {
+    #desc-container {
+      width: 100%;
+    }
+    
+    #task-form textarea {
+      height: 70%;
+    }
+
+    .right-col-form {
+      width: 100%;
+    }
+
+    #form-title {
+      width: 95%;
+    }
+
+    .form-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .form-footer input[type="button"] {
+      width: 80%;
+    }
+
+    /* Hide Radio Buttons and Show Select Menu */
+      .right-col-input-radio {
+        display: none;
+      }
+      
+      .right-col-input-select {
+        display: block;
+      }
+
+  }
+
+
 
 /* Footer */
 
