@@ -235,6 +235,19 @@ body {
 
 /* Task Form */
 
+#task-form .close-form {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  z-index: 3;
+  right: 5px;
+  top: 5px;
+}
+
+#task-form .close-form:hover {
+  cursor: pointer;
+}
+
 #task-form {
     display: flex;
     flex-direction: column;
@@ -333,8 +346,8 @@ label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"]
 }
 
 
-/* Change website responsive on <500px width screens  */
-  @media only screen and (max-width: 500px) {
+/* Change form responsiveness on <500px width screens  */
+  @media only screen and (max-width: 600px) {
     #desc-container {
       width: 100%;
     }
