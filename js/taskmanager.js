@@ -16,16 +16,18 @@ class TaskManager {
             status: status,
           };
       
-          this.tasks.push({ task });
+          this.tasks.push(task);
         
-    }
+    } 
+
 }     
 
 
 // Submit Form
 function submitForm () {
     if (validateInput()===true) {
-        TaskManager.addTask(formTitle, formDescription, formAssignee, formDue, formStatus);
+        taskManager.addTask(formTitle.value, formDescription.value, formAssignee.value, formDue.value, formStatus.value);      
         clearForm();
+        // console.log(taskManager.tasks)
     }
 };
