@@ -10,7 +10,7 @@
     <link href="css/style.css" type="text/css" rel="stylesheet">
 
     <!-- Link to custom JS file -->
-    <script src="/js/index.js"></script>
+    <script src="js/index.js"></script>
 
     <title>T2 Task Planner</title>
   </head>
@@ -159,7 +159,7 @@
         <section>
           <form id="task-form">
             <!-- Title -->
-            <img class="close-form" src="images/close-button.png" onclick="toggleTaskForm()">
+            <img class="close-form" id="closeTaskForm" src="images/close-button.png" onclick="toggleTaskForm()">
             <div class="form-row">
               <label for="form-title">Title</label>
               <input type="text" id="form-title" name="form-title">
@@ -203,9 +203,9 @@
             <!-- Bottom Row -->
             <div class="form-row form-footer">
               <!-- Delete Button -->
-              <input type="button" onclick="toggleTaskForm()" value="Delete Task">
+              <input type="button" id="deleteTaskBtn" value="Delete Task">
               <!-- Save Task Button -->
-              <input type="button" value="Save Task">
+              <input type="button" id="saveTaskBtn" value="Save Task">
             </div>
           </form>
         </section>
@@ -217,6 +217,9 @@
           <li class="createdby">Created by da boiz</li>
         </ul>
       </footer>
+
+    <!-- Link to custom JS file -->
+    <script src="js/form-validation.js"></script>
   </body>
 
 </html>
