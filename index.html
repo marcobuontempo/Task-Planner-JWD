@@ -10,7 +10,7 @@
     <link href="css/style.css" type="text/css" rel="stylesheet">
 
     <!-- Link to custom JS file -->
-    <script src="myscripts.js"></script>
+    <script src="/js/index.js"></script>
 
     <title>T2 Task Planner</title>
   </head>
@@ -28,9 +28,9 @@
       
       <!-- Burger Icon for Menu -->
       <div class="menu-button" onclick="toggleMenu(this)">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
+          <div class="bar1 change"></div>
+          <div class="bar2 change"></div>
+          <div class="bar3 change"></div>
       </div>
               <!-- Sidebar Navigation Start -->
       <nav id="sidebar">
@@ -185,29 +185,16 @@
                     <label for="form-due">Due Date</label>
                     <input type="date" id="form-due" name="form-due">
                   </div>
-                  <!-- Status -->
-                    <!-- Radio Buttons for Bigger Screens -->
-                      <div class="right-col-input-radio">
-                        <p>Status</p>
-                        <input type="radio" id="form-in-progress" name="form-status" value="in-progress">
-                        <label for="form-in-progress">In-Progress</label><br>
-                        <input type="radio" id="form-to-do" name="form-status" value="to-do">
-                        <label for="form-to-do">To-do</label><br>
-                        <input type="radio" id="form-review" name="form-status" value="review">
-                        <label for="form-review">Review</label><br>
-                        <input type="radio" id="form-done" name="form-status" value="done">
-                        <label for="form-done">Done</label><br>
-                      </div>
-                    <!-- Select Menu for Smaller Screens -->
-                      <div class="right-col-input-select">
-                        <label for="form-status-select">Status</label>
-                        <select name="form-status" id="form-status-select">
-                          <option value="in-progress">In-Progress</option>
-                          <option value="to-do">To-Do</option>
-                          <option value="review">Review</option>
-                          <option value="done">Done</option>
-                        </select>
-                      </div>
+                  <!-- Status Select Menu for Smaller Screens -->
+                  <div class="right-col-input-select">
+                    <label for="form-status-select">Status</label>
+                    <select name="form-status" id="form-status-select">
+                      <option value="in-progress">In-Progress</option>
+                      <option value="to-do">To-Do</option>
+                      <option value="review">Review</option>
+                      <option value="done">Done</option>
+                    </select>
+                  </div>
                 </div>
                 <!-- Right Column Container End -->
             </div>

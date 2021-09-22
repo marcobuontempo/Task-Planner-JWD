@@ -320,23 +320,6 @@ label[for="form-title"] {
   padding: 10px;
 }
 
-.right-col-input-radio {
-  margin: 20px 0px;
-}
-
-.right-col-input-select {
-  display: none;
-}
-
-#task-form input[type="radio"] {
-  margin: 10px 0px;
-  font-weight: normal;
-}
-
-label[for="form-in-progress"], label[for="form-to-do"], label[for="form-review"], label[for="form-done"] {
-  font-weight: normal;
-}
-
 .form-footer {
   display: flex;
   justify-content: center;
@@ -402,16 +385,6 @@ input[value="Save Task"] {
     #task-form {
       left: 30px;
     }
-  
-
-    /* Hide Radio Buttons and Show Select Menu */
-      .right-col-input-radio {
-        display: none;
-      }
-      
-      .right-col-input-select {
-        display: block;
-      }
 
   }
 
