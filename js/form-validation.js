@@ -27,14 +27,14 @@ function validateInput () {
             titleErrorMsg ="";
         };
     
-        if (formDescription.value<5) {
+        if (formDescription.value.length<5) {
             descErrorMsg = "Your description is less than 5 characters long.\n";
         } else {
             descErrorMsg = "";
         }
 
         if (formAssignee.value.length<3) {
-            assignErrorMsg = "Your assignee is less than 5 characters long.\n";
+            assignErrorMsg = "Your assignee is less than 3 characters long.\n";
         } else {
             assignErrorMsg = "";
         };
@@ -53,9 +53,11 @@ function validateInput () {
         
     
         window.alert(`Please enter valid input:\n${titleErrorMsg}${descErrorMsg}${assignErrorMsg}${dueErrorMsg}${statusErrorMsg}`);
-
     } else {
         window.alert(`task created successfully`)
+        TaskManager.addTask(formTitle, formDescription, formAssignee, formDue, formStatus);
+        clearForm();
+        console.log(TaskManager.tasks)
     }
 }
 
