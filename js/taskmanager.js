@@ -20,3 +20,12 @@ class TaskManager {
         
     }
 }     
+
+
+// Submit Form
+function submitForm () {
+    if (validateInput()===true) {
+        TaskManager.addTask(formTitle, formDescription, formAssignee, formDue, formStatus);
+        clearForm();
+    }
+};
