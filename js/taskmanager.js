@@ -48,16 +48,11 @@ class TaskManager {
             const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             const taskHtml = createTask(this.tasks[i].title,
                 this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                this.formattedDate,
+                this.tasks[i].assignee,
+                formattedDate,
                 this.tasks[i].status);
             tasksHtmlList.push(taskHtml);
-            console.log(tasksHtmlList);
-            console.log( createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                this.formattedDate,
-                this.tasks[i].status))
+
 
         }
         const tasksHtml = tasksHtmlList.join("\n");
