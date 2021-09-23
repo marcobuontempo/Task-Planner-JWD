@@ -6,8 +6,10 @@
     // Click "Save Task" button -> verifies form
     saveButton.addEventListener("click", submitForm);
 
-    // Click "Delete Task" button -> clears form details
-    deleteButton.addEventListener("click", clearForm);
+    // Click "Delete Task" button
+
+    // Click 'X' top-right of Form:
+        document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
 
 
 
@@ -24,11 +26,4 @@
         createButton.addEventListener("click", toggleTaskForm);
         
         // Hides menu
-        createButton.addEventListener("click", toggleMenu)
-   
-
-
-// TASK FORM
-
-    // Hide Form when clicking 'X' on top right
-    document.getElementById("closeTaskForm").addEventListener("click", toggleTaskForm);
+        createButton.addEventListener("click", toggleMenu);
