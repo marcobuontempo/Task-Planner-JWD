@@ -71,3 +71,10 @@ function submitForm () {
         taskManager.render();
     }
 };
+
+
+// Delete task and close form for click on top-right X
+function closeFormX () {
+    clearForm();
+    toggleTaskForm();
+};
