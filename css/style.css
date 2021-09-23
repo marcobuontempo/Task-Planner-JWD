@@ -48,7 +48,7 @@ body {
 /* Side Navigation Bar */
 
   /* Menu Toggle (Burger Icon) */
-    .menu-button {
+    #menu-button {
       display: inline-block;
       cursor: pointer;
       margin-left: 10px;
@@ -109,7 +109,7 @@ body {
       border-radius: 15px;
     }
     
-    .nav-button {
+    #create-button {
       text-decoration: none;
       color: white;  
       border: none;

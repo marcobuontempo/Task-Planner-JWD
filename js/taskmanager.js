@@ -67,6 +67,7 @@ function submitForm () {
     if (validateInput()===true) {
         taskManager.addTask(formTitle.value, formDescription.value, formAssignee.value, formDue.value, formStatus.value);      
         clearForm();
+        toggleTaskForm();
         taskManager.render();
     }
 };

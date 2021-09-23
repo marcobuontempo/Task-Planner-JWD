@@ -25,15 +25,15 @@
     <div class="row main-container">
       
       <!-- Burger Icon for Menu -->
-      <div class="menu-button" onclick="toggleMenu(this)">
-          <div class="bar1 change"></div>
-          <div class="bar2 change"></div>
-          <div class="bar3 change"></div>
+      <div id="menu-button">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
       </div>
               <!-- Sidebar Navigation Start -->
       <nav id="sidebar">
         <ul>
-          <li><button type="button" onclick="toggleTaskForm(), toggleMenu()" class="nav-button">CREATE</button></li>
+          <li><button type="button" id="create-button">CREATE</button></li>
           <li><a href="list.html">TO-DO</a></li>
           <li><a href="prog.html">IN-PROGRESS</a></li>
           <li><a href="review.html">REVIEW</a></li>
@@ -64,7 +64,7 @@
         <section>
           <form id="task-form">
             <!-- Title -->
-            <img class="close-form" id="closeTaskForm" src="images/close-button.png" onclick="toggleTaskForm()">
+            <img class="close-form" id="closeTaskForm" src="images/close-button.png">
             <div class="form-row">
               <label for="form-title">Title</label>
               <input type="text" id="form-title" name="form-title">
