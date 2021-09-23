@@ -30,9 +30,10 @@ let assignErrorMsg = "";
 let dueErrorMsg = "";
 let statusErrorMsg = "";
 
+//validation function
 function validateInput () {
     if (formTitle.value.length<5 || formDescription.value.length<5 || formAssignee.value.length<5 || formDue.value==="" || formStatus.value==="") {
-    
+        //if statements displays message if 
         if (formTitle.value.length<5) {
             titleErrorMsg ="Your title is less than 5 characters long.\n";
         } else {
