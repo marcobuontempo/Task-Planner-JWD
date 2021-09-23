@@ -5,7 +5,7 @@ const formTitle = document.getElementById("form-title");
 const formDescription = document.getElementById("form-desc");
 const formAssignee = document.getElementById("form-assignee");
 const formDue = document.getElementById("form-due");
-const formStatus = document.getElementById("form-status-select");
+const formStatus = document.getElementById("form-status");
 const deleteButton = document.getElementById("deleteTaskBtn");
 const saveButton = document.getElementById("saveTaskBtn");
 const closeForm = document.getElementById("closeTaskForm");
@@ -34,38 +34,45 @@ let statusErrorMsg = "";
 function validateInput () {
     if (formTitle.value.length<5 || formDescription.value.length<5 || formAssignee.value.length<5 || formDue.value==="" || formStatus.value==="") {
         //specific if statements displays message if conditions are met
-        if (formTitle.value.length<5) {
-            titleErrorMsg ="Your title is less than 5 characters long.\n";
+        if (formStatus.value==="") {
+            statusErrorMsg = "Your task status is empty.\n"
+            formStatus.focus();
         } else {
-            titleErrorMsg ="";
-        };
-    
-        if (formDescription.value.length<5) {
-            descErrorMsg = "Your description is less than 5 characters long.\n";
-        } else {
-            descErrorMsg = "";
-        }
-
-        if (formAssignee.value.length<3) {
-            assignErrorMsg = "Your assignee is less than 3 characters long.\n";
-        } else {
-            assignErrorMsg = "";
+            statusErrorMsg = "";
         };
 
         if (formDue.value==="") {
             dueErrorMsg = "Your form due date is empty.\n";
+            formDue.focus();
         } else {
             dueErrorMsg = "";
         };
-        
-        if (formStatus.value==="") {
-            statusErrorMsg = "Your task status is empty.\n"
+
+        if (formAssignee.value.length<3) {
+            assignErrorMsg = "Your assignee is less than 3 characters long.\n";
+            formAssignee.focus();
         } else {
-            statusErrorMsg = "";
+            assignErrorMsg = "";
         };
+
+        if (formDescription.value.length<5) {
+            descErrorMsg = "Your description is less than 5 characters long.\n";
+            formDescription.focus();
+        } else {
+            descErrorMsg = "";
+        }
+        
+        if (formTitle.value.length<5) {
+            titleErrorMsg ="Your title is less than 5 characters long.\n";
+            formTitle.focus();
+        } else {
+            titleErrorMsg ="";
+        };
+    
         //windows prompt advises of failure or success
         window.alert(`Please enter valid input:\n${titleErrorMsg}${descErrorMsg}${assignErrorMsg}${dueErrorMsg}${statusErrorMsg}`);
         return false;
+
     } else {
         window.alert(`Task created successfully! :)`); 
         return true;
