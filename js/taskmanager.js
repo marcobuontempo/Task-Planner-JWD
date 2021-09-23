@@ -75,6 +75,9 @@ function submitForm () {
 
 // Delete task and close form for click on top-right X
 function closeFormX () {
-    clearForm();
-    toggleTaskForm();
+    let result = window.confirm("Are you sure you want to close and delete form?")
+    if (result) {
+        clearForm();
+        toggleTaskForm();
+    }
 };
