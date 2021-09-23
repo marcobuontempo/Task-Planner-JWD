@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: 'Roboto', sans-serif;;
 }
 
 
@@ -395,6 +396,8 @@ input[value="Save Task"] {
     footer {
       background-color: black;   
       text-align: center;
+      display: flex;
+      align-items: center;
       }
     
       footer ul {
@@ -407,4 +410,5 @@ input[value="Save Task"] {
       footer li {
           color: white;
           font-style: italic;
+          padding: 5px 5px;
       }
