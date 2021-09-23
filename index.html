@@ -33,7 +33,7 @@
               <!-- Sidebar Navigation Start -->
       <nav id="sidebar">
         <ul>
-          <li><button type="button" onclick="toggleTaskForm(), toggleMenu(this)" class="nav-button">CREATE</button></li>
+          <li><button type="button" onclick="toggleTaskForm(), toggleMenu()" class="nav-button">CREATE</button></li>
           <li><a href="list.html">TO-DO</a></li>
           <li><a href="prog.html">IN-PROGRESS</a></li>
           <li><a href="review.html">REVIEW</a></li>
@@ -42,117 +42,24 @@
       </nav>
       <!-- Sidebar Navigation End -->
 
-        <div>
  
-          <section class="cards">
+          <section class="cards" id="task-card-list">
             
             <!-- /card-one -->   
             <div class="card">
               <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
               <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
+                <h1>Welcome</h1>
+                <p class="card-desc">Press the burger icon on the left to create a new form :)</p>
                 <p class="card-status">STATUS</p>
               </div>
               <div class="card-footer">
                 <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-              </div>
-              
+              </div>   
             </div>
 
-            <!-- /card-two -->
-            <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- /card-three -->
-            <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- /card-four -->
-            <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-
-             <!-- /card-five -->   
-             <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-      
-             <!-- /card-six -->
-             <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-                  
-             <!-- /card-seven -->
-             <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-
-             <!-- /card-eight -->
-             <div class="card">
-              <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
-              <div class="card-container">
-                <h1>TITLE</h1>
-                <p class="card-desc">Description...</p>
-                <p class="card-status">STATUS</p>
-                <div class="card-footer">
-                  <span class="card-due-date">Due Date</span><span class="card-assignee">Assignee</span>
-                </div>
-              </div>
-            </div>
-          </div>
           </section>
-        </div>
+    </div>
 
         <section>
           <form id="task-form">

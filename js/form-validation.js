@@ -33,7 +33,7 @@ let statusErrorMsg = "";
 //validation function
 function validateInput () {
     if (formTitle.value.length<5 || formDescription.value.length<5 || formAssignee.value.length<5 || formDue.value==="" || formStatus.value==="") {
-        //if statements displays message if 
+        //specific if statements displays message if conditions are met
         if (formTitle.value.length<5) {
             titleErrorMsg ="Your title is less than 5 characters long.\n";
         } else {
@@ -63,7 +63,7 @@ function validateInput () {
         } else {
             statusErrorMsg = "";
         };
-        
+        //windows prompt advises of failure or success
         window.alert(`Please enter valid input:\n${titleErrorMsg}${descErrorMsg}${assignErrorMsg}${dueErrorMsg}${statusErrorMsg}`);
         return false;
     } else {

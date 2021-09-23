@@ -1,13 +1,32 @@
+// Create Task Function
+function createTask(title, description, assignee, dueDate, status) {
+    const html = 
+    `<div class="card">
+        <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
+            <div class="card-container">
+                <h1>${title}</h1>
+                <p class="card-desc">${description}</p>
+                <p class="card-status">${status}</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-due-date">${dueDate}</span>
+                <span class="card-assignee">${assignee}</span>
+            </div>
+    </div>`;
+    return html;
+};
+
+
+
 // Define TaskManager Class
 class TaskManager {
     constructor(currentId = 0) {
         this.tasks = [];
         this.currentId = currentId;
-    }  
+    }; 
     
     // Method for creating a new task
     addTask(title, description, assignee, dueDate, status) {
-        
         const task = {
             // Increment the current Id for each new task
             id: this.currentId++,
@@ -19,9 +38,32 @@ class TaskManager {
           };
       
           this.tasks.push(task);
-        
     } 
 
+    // Render a HTML element
+    render() {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                this.formattedDate,
+                this.tasks[i].status);
+            tasksHtmlList.push(taskHtml);
+            console.log(tasksHtmlList);
+            console.log( createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                this.formattedDate,
+                this.tasks[i].status))
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
 }     
 
 
@@ -30,5 +72,6 @@ function submitForm () {
     if (validateInput()===true) {
         taskManager.addTask(formTitle.value, formDescription.value, formAssignee.value, formDue.value, formStatus.value);      
         clearForm();
+        taskManager.render();
     }
 };
