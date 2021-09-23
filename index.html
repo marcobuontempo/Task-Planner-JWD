@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS Style and Reset sheets -->
+    <!-- Link CSS Style and Reset sheets -->
     <link href="css/reset.css" type="text/css" rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet">
 
@@ -13,9 +13,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+    
+    <!-- Link Tab/Window Icon -->
+    <link rel="icon" href="images/T2.JPG">
+    
+    <!-- Webpage Title -->
     <title>T2 Task Planner</title>
   </head>
+
 
 
   <body class="box">
@@ -26,15 +31,19 @@
     </header>
     <!-- Header End -->
       
+    <!-- Main Card Container Start -->
     <div class="row main-container">
       
-      <!-- Burger Icon for Menu -->
+      <!-- Burger Icon for Menu Toggle Start -->
       <div id="menu-button">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
       </div>
-              <!-- Sidebar Navigation Start -->
+      <!-- Burger Icon for Menu Toggle End -->
+      
+      
+      <!-- Sidebar Navigation Start -->
       <nav id="sidebar">
         <ul>
           <li><button type="button" id="create-button">CREATE</button></li>
@@ -46,10 +55,10 @@
       </nav>
       <!-- Sidebar Navigation End -->
 
- 
+      <!-- Card List Start -->
           <section class="cards" id="task-card-list">
             
-            <!-- Example card-one -->   
+            <!-- Placeholder example card one -->   
             <div class="card">
               <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
               <div class="card-container">
@@ -63,8 +72,12 @@
             </div>
 
           </section>
+      <!-- Card List End -->
     </div>
+    <!-- Main Card Container End -->
 
+
+    <!-- Form Start -->
         <section>
           <form id="task-form">
             <!-- Title -->
@@ -94,7 +107,7 @@
                     <label for="form-due">Due Date</label>
                     <input type="date" id="form-due" name="form-due">
                   </div>
-                  <!-- Status Select Menu for Smaller Screens -->
+                  <!-- Status Select Menu -->
                   <div class="right-col-input-select">
                     <label for="form-status-select">Status</label>
                     <select name="form-status" id="form-status-select">
@@ -119,7 +132,10 @@
             </div>
           </form>
         </section>
-    
+      <!-- Form End -->
+      
+
+      <!-- Footer Start -->
       <footer class="row footer">
         <ul>
           <li class="t2planner">T2 TASK PLANNER ©</li>
@@ -127,6 +143,7 @@
           <li class="createdby">Created by da boiz</li>
         </ul>
       </footer>
+      <!-- Footer End -->
 
 
     <!-- Link to custom JS files -->
@@ -135,8 +152,6 @@
     <script src="js/form-validation.js"></script>
     <script src="js/index.js"></script>
  
-  
-    
     
   </body>
 
