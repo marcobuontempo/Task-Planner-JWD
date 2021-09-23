@@ -354,6 +354,10 @@ input[value="Save Task"] {
   width: 100%;
 }
 
+/* Toggle Blur Class */
+  .blurCards {
+    filter: blur(5px);
+  };
 
 /* Change form responsiveness on <500px width screens  */
   @media only screen and (max-width: 600px) {
