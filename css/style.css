@@ -255,10 +255,12 @@ body {
   z-index: 3;
   right: 5px;
   top: 5px;
+  border-radius: 50%;
 }
 
 #task-form .close-form:hover {
   cursor: pointer;
+  filter: invert(10%);
 }
 
 #task-form {
