@@ -12,19 +12,31 @@ body {
     display: flex;
     flex-flow: column;
     height: 100%;
+    
   }
 
   .box .row.header {
     flex: 0 1 30px;
+    position: fixed;
+    height: 30px;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
   }
 
   .box .row.main-container {
     flex: 1 1 auto;
+    padding: 20px;
     background-color: #C38181;
   }
 
   .box .row.footer {
     flex: 0 1 30px;
+    position: fixed;
+    height: 30px;
+    bottom: 0px;
+    width: 100%;
+    z-index: 100;
   }
 
 
@@ -51,9 +63,9 @@ body {
   /* Menu Toggle (Burger Icon) */
     #menu-button {
       display: inline-block;
+      top: 40px;
+      position:sticky;
       cursor: pointer;
-      margin-left: 10px;
-      margin-top: 10px;
     }
   
     .bar1, .bar2, .bar3 {
