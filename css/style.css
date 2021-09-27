@@ -267,7 +267,7 @@ body {
     border-radius: 10px;
   }
 
-form input, form textarea {
+form input, form textarea, form select {
   box-sizing: border-box;
   margin: 5px 0px;
   padding: 10px;
