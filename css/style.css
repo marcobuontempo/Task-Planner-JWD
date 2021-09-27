@@ -130,7 +130,7 @@ body {
     }
   
     /* Hover Effects on Sidebar Elements */
-    nav a:hover, nav button:hover  {
+    nav a:hover, #create-button:hover  {
       color: #C38181;
       font-size: 1.4rem;
       cursor: pointer;
