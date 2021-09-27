@@ -357,39 +357,37 @@ input[value="Save Task"] {
 /* Toggle Blur Class */
   .blurCards {
     filter: blur(5px);
-  };
-
-/* Change form responsiveness on <500px width screens  */
-  @media only screen and (max-width: 600px) {
-    #desc-container {
-      width: 100%;
-    }
+  }
     
-    #task-form textarea {
-      height: 70%;
-    }
+  
 
-    .right-col-form {
-      width: 100%;
-    }
 
-    #form-title {
-      width: 95%;
-    }
-
-    .form-footer {
-      display: flex;
+/* Change form responsiveness on <600px width screens  */
+  @media screen and (max-width: 600px) {
+  
+    .middle-form  {
       flex-direction: column;
-      align-items: center;
+      align-content: center;
+
     }
 
-    .form-footer input[type="button"] {
+    #desc-container {
       width: 90%;
+      height: 45%;
     }
 
     #task-form {
-      left: 30px;
+      left: 10px;
+      width: 95%;
+      position: center;
     }
+
+    .right-col-form {
+      width: 90%;
+      height: 45%;
+      justify-content: space-around;
+    }
+
 
   }
 
