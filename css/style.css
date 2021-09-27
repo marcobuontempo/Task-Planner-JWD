@@ -240,7 +240,7 @@ body {
     border-radius: 0px 0px 10px 10px;
 
   }
-  .card-due-date, .card-assignee {
+  .card-due-date, .card-assigned {
     padding: 10px;
     font-style: italic;
   }
@@ -300,7 +300,7 @@ label[for="form-title"] {
   margin: 10px 0px;
 }
 
-#form-assignee, #form-due, #form-status {
+#form-assigned, #form-due, #form-status {
   width: 100%;
 }
 

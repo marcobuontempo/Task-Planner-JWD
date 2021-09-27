@@ -1,5 +1,5 @@
 // Create Task Function
-function createTask(title, description, assignee, dueDate, status) {
+function createTask(title, description, assignedTo, dueDate, status) {
     const html = 
     `<div class="card">
         <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
@@ -10,7 +10,7 @@ function createTask(title, description, assignee, dueDate, status) {
             </div>
             <div class="card-footer">
                 <span class="card-due-date">${dueDate}</span>
-                <span class="card-assignee">${assignee}</span>
+                <span class="card-assigned">${assignedTo}</span>
             </div>
     </div>`;
     return html;
@@ -26,13 +26,13 @@ class TaskManager {
     }; 
     
     // Method for creating a new task
-    addTask(title, description, assignee, dueDate, status) {
+    addTask(title, description, assignedTo, dueDate, status) {
         const task = {
             // Increment the current Id for each new task
             id: this.currentId++,
             title: title,
             description: description,
-            assignee: assignee,
+            assignedTo: assignedTo,
             dueDate: dueDate,
             status: status,
           };
@@ -48,7 +48,7 @@ class TaskManager {
             const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             const taskHtml = createTask(this.tasks[i].title,
                 this.tasks[i].description,
-                this.tasks[i].assignee,
+                this.tasks[i].assignedTo,
                 formattedDate,
                 this.tasks[i].status.toUpperCase());
             tasksHtmlList.push(taskHtml);
@@ -65,7 +65,7 @@ class TaskManager {
 // Submit Form Functions (validates inputs -> runs .addTask method)
 function submitForm () {
     if (validateInput()===true) {
-        taskManager.addTask(formTitle.value, formDescription.value, formAssignee.value, formDue.value, formStatus.value);      
+        taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
         clearForm();
         toggleTaskForm();
         taskManager.render();
