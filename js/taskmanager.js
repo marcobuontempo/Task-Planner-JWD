@@ -50,7 +50,7 @@ class TaskManager {
                 this.tasks[i].description,
                 this.tasks[i].assignee,
                 formattedDate,
-                this.tasks[i].status);
+                this.tasks[i].status.toUpperCase());
             tasksHtmlList.push(taskHtml);
 
 
