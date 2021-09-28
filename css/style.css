@@ -188,13 +188,13 @@ body {
     visibility: visible;
   }
 
-  .card:hover #done-button {
+  .card:hover .done-button {
     visibility: visible;
   }
 
 
   /* Done Button */
-  #done-button {
+  .done-button {
     position: absolute;
     right: 5px;
     bottom: 45px;
