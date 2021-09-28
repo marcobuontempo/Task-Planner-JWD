@@ -27,3 +27,21 @@
         
         // Hides menu
         createButton.addEventListener("click", toggleMenu);
+
+
+
+// TASK LIST
+
+    // DOM Selector
+    const taskList = document.querySelector("#task-card-list")
+
+    // Event Listener for Done Button. Changes Task Status to "Done" after clicking Done button
+    taskList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("done-button")) {
+            const parentTask = event.target.parentElement.parentElement;
+            const taskId = Number(parentTask.dataset.taskId);
+            const task = taskManager.getTaskId(taskId);
+            task.status = "Done";
+            taskManager.render();
+        }
+    });

@@ -1,13 +1,13 @@
 // Create Task Function
-function createTask(title, description, assignedTo, dueDate, status) {
+function createTask(title, description, assignedTo, dueDate, status, id) {
     const html = 
-    `<div class="card">
+    `<div class="card" data-task-id=${id}>
         <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
             <div class="card-container">
                 <h1>${title}</h1>
                 <p class="card-desc">${description}</p>
                 <p class="card-status">${status}</p>
-                <img src="images/checkmark.png" alt="Done Button" id="done-button">
+                <img src="images/checkmark.png" alt="Done Button" class="done-button">
             </div>
             <div class="card-footer">
                 <span class="card-due-date">${dueDate}</span>
@@ -51,7 +51,8 @@ class TaskManager {
                 this.tasks[i].description,
                 this.tasks[i].assignedTo,
                 formattedDate,
-                this.tasks[i].status.toUpperCase());
+                this.tasks[i].status.toUpperCase(),
+                this.tasks[i].id);
             tasksHtmlList.push(taskHtml);
 
 
@@ -59,6 +60,20 @@ class TaskManager {
         const tasksHtml = tasksHtmlList.join("\n");
         const taskCardList = document.getElementById("task-card-list");
         taskCardList.innerHTML = tasksHtml;
+    }
+
+    // IDK
+    getTaskId(taskId) {
+        let foundTask;
+        
+        // Compares the taskId (button task id) to the looped task
+        this.tasks.forEach((getTask) => {
+            const task = getTask;
+            if(task.id === taskId) {
+            foundTask = task;
+        }
+        });
+        return foundTask;
     }
 }     
 
