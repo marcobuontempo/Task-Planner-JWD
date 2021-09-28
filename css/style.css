@@ -187,6 +187,22 @@ body {
   .card:hover .edit-icon {
     visibility: visible;
   }
+
+  .card:hover #done-button {
+    visibility: visible;
+  }
+
+
+  /* Done Button */
+  #done-button {
+    position: absolute;
+    right: 5px;
+    bottom: 45px;
+    opacity: 0.7;
+    visibility: hidden;
+    height: 30px;
+  }
+
   
   /* Sizing/Styling of White Main Section of Card */
   .card-container {

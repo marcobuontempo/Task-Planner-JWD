@@ -7,6 +7,7 @@ function createTask(title, description, assignedTo, dueDate, status) {
                 <h1>${title}</h1>
                 <p class="card-desc">${description}</p>
                 <p class="card-status">${status}</p>
+                <img src="images/checkmark.png" alt="Done Button" id="done-button">
             </div>
             <div class="card-footer">
                 <span class="card-due-date">${dueDate}</span>
