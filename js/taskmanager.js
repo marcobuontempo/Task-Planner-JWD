@@ -66,13 +66,14 @@ class TaskManager {
     getTaskId(taskId) {
         let foundTask;
         
-        // Compares the taskId (button task id) to the looped task.
-        this.tasks.forEach((i) => {
-            const task = i;
-        if(task.id === taskId) {
+        // Compares the taskId (button task id) to the looped task
+        this.tasks.forEach((getTask) => {
+            const task = getTask;
+            if(task.id === taskId) {
             foundTask = task;
         }
         });
+        return foundTask;
     }
 }     
 
