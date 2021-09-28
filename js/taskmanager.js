@@ -1,7 +1,7 @@
 // Create Task Function
-function createTask(title, description, assignedTo, dueDate, status) {
+function createTask(title, description, assignedTo, dueDate, status, id) {
     const html = 
-    `<div class="card">
+    `<div class="card" data-task-id=${id}>
         <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
             <div class="card-container">
                 <h1>${title}</h1>
@@ -51,7 +51,8 @@ class TaskManager {
                 this.tasks[i].description,
                 this.tasks[i].assignedTo,
                 formattedDate,
-                this.tasks[i].status.toUpperCase());
+                this.tasks[i].status.toUpperCase(),
+                this.tasks[i].id);
             tasksHtmlList.push(taskHtml);
 
 
