@@ -61,6 +61,19 @@ class TaskManager {
         const taskCardList = document.getElementById("task-card-list");
         taskCardList.innerHTML = tasksHtml;
     }
+
+    // IDK
+    getTaskId(taskId) {
+        let foundTask;
+        
+        // Compares the taskId (button task id) to the looped task.
+        this.tasks.forEach((i) => {
+            const task = i;
+        if(task.id === taskId) {
+            foundTask = task;
+        }
+        });
+    }
 }     
 
 
