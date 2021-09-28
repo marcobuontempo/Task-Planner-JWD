@@ -6,10 +6,10 @@ function createTask(title, description, assignedTo, dueDate, status, id) {
             <div class="card-container">
                 <h1>${title}</h1>
                 <p class="card-desc">${description}</p>
-                <p class="card-status">${status}</p>
-                <img src="images/checkmark.png" alt="Done Button" class="done-button">
+                <p class="card-status status-${status}">${status.toUpperCase()}</p>
+                <img src="images/checkmark.png" alt="Done Button" class="done-button button-clicked-${status}">
             </div>
-            <div class="card-footer">
+            <div class="card-footer footer-${status}">
                 <span class="card-due-date">${dueDate}</span>
                 <span class="card-assigned">${assignedTo}</span>
             </div>
@@ -51,7 +51,7 @@ class TaskManager {
                 this.tasks[i].description,
                 this.tasks[i].assignedTo,
                 formattedDate,
-                this.tasks[i].status.toUpperCase(),
+                this.tasks[i].status,
                 this.tasks[i].id);
             tasksHtmlList.push(taskHtml);
 

@@ -41,7 +41,7 @@
             const parentTask = event.target.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
             const task = taskManager.getTaskId(taskId);
-            task.status = "Done";
+            task.status = "done";
             taskManager.render();
         }
     });
