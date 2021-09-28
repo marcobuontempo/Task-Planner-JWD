@@ -192,7 +192,7 @@ body {
   }
   .card:hover .edit-icon {
     visibility: visible;
-    opacity: 1;
+    opacity: 0.9;
   }
 
   .card:hover .done-button.button-clicked-in-progress {
@@ -208,9 +208,17 @@ body {
     bottom: 45px;
     opacity: 0.7;
     visibility: hidden;
-    height: 30px;
+    height: 25px;
+    padding: 5px;
     opacity: 0;
-    transition: opacity 1s;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3), inset -1px -1px 2px rgba(0,0,0,0.3);
+    transition: opacity 0.3s;
+  }
+
+  .done-button:hover {
+    box-shadow: inset -1px -1px 4px 1px black;
+    background-color: #4CAF50;
   }
 
   
@@ -228,11 +236,12 @@ body {
     top: 5px;
     opacity: 0.7;
     visibility: hidden;
-    opacity: 0;
-    transition: opacity 1s;
-    z-index: 5;
+    opacity: 0;    
+    z-index: 2;
     background-color: white;
     border-radius: 10px;
+    transition: opacity 0.3s;
+
   }
 
 
@@ -255,10 +264,10 @@ body {
     text-align: center;
     width: 100%;
     padding: 5px 0px;
-    /* visibility: hidden; */
+    visibility: hidden;
     font-weight: bold;
     opacity: 0;
-    transition: opacity 1s, bottom 0.3s;
+    transition: opacity 0.3s, bottom 0.3s;
   }
 
 
