@@ -42,6 +42,16 @@ body {
 
 
 
+/* Visible / Hidden Classes */
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
 /* Header */
 
   header {
