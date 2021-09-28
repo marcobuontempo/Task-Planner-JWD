@@ -64,9 +64,10 @@ body {
   /* Menu Toggle (Burger Icon) */
     #menu-button {
       display: inline-block;
-      top: 40px;
+      top: 20px;
       position:sticky;
       cursor: pointer;
+      z-index: 2;
     }
   
     .bar1, .bar2, .bar3 {
