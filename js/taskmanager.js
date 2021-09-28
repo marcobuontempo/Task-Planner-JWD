@@ -9,7 +9,7 @@ function createTask(title, description, assignedTo, dueDate, status, id) {
                 <p class="card-status status-${status}">${status.toUpperCase()}</p>
                 <img src="images/checkmark.png" alt="Done Button" class="done-button">
             </div>
-            <div class="card-footer">
+            <div class="card-footer footer-${status}">
                 <span class="card-due-date">${dueDate}</span>
                 <span class="card-assigned">${assignedTo}</span>
             </div>

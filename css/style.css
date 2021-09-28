@@ -256,6 +256,7 @@ body {
     font-weight: bold;
   }
 
+
   /* Styling for each type of card status */
     .status-in-progress {
       color: blue;
@@ -285,12 +286,25 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 0px 0px 10px 10px;
-
   }
   .card-due-date, .card-assigned {
     padding: 10px;
     font-style: italic;
   }
+  /* Card Footer Styling according to Card Status */
+    .footer-in-progress {
+      background-color: rgb(0, 0, 40);
+    }
+    .footer-to-do {
+      background-color: rgb(40, 0, 40);
+    }
+    .footer-review {
+      background-color: rgb(40, 0, 0);
+    }
+    .footer-done {
+      background-color: rgb(0, 40, 0);
+    }
+
 
 
 /* Task Form */
