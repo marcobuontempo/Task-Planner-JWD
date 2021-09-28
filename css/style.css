@@ -253,7 +253,26 @@ body {
     width: 100%;
     padding: 5px 0px;
     visibility: hidden;
+    font-weight: bold;
   }
+
+  /* Styling for each type of card status */
+    .status-in-progress {
+      color: blue;
+    }
+    
+    .status-to-do {
+      color: purple;
+    }
+
+    .status-review {
+      color: orangered;
+    }
+
+    .status-done {
+      color: green;
+    }
+
 
   /* Card Footer Positioning and Styling */
   .card-footer {
