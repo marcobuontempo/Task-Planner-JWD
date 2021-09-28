@@ -32,7 +32,7 @@ let statusErrorMsg = "";
 
 //validation function
 function validateInput () {
-    if (formTitle.value.length<5 || formDescription.value.length<5 || formAssignedTo.value.length<5 || formDue.value==="" || formStatus.value==="") {
+    if (formTitle.value.length<5 || formDescription.value.length<5 || formAssignedTo.value.length<3 || formDue.value==="" || formStatus.value==="") {
         //specific if statements displays message if conditions are met
         if (formStatus.value==="") {
             statusErrorMsg = "-Task Status is empty.\n"
