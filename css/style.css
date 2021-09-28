@@ -42,16 +42,6 @@ body {
 
 
 
-/* Visible / Hidden Classes */
-.visible {
-  visibility: visible;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-
 /* Header */
 
   header {
@@ -86,6 +76,7 @@ body {
       background-color: #333;
       margin: 6px 0;
       transition: 0.4s;
+      border-radius: 10px;
     }
     
           /* Rotate first bar */
@@ -200,7 +191,7 @@ body {
     visibility: visible;
   }
 
-  .card:hover .done-button {
+  .card:hover .done-button.button-clicked-in-progress {
     visibility: visible;
   }
 
