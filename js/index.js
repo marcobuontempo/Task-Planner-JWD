@@ -27,3 +27,18 @@
         
         // Hides menu
         createButton.addEventListener("click", toggleMenu);
+
+
+
+// TASK LIST
+
+    // DOM Selector
+    const taskList = document.querySelector("#task-card-list")
+
+    // Event Listener
+    taskList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("done-button")) {
+            const parentTask = event.target.parentElement.parentElement;
+            console.log(parentTask)
+        }
+    });
