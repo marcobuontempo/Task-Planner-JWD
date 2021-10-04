@@ -43,5 +43,6 @@
             const task = taskManager.getTaskId(taskId);
             task.status = "done";
             taskManager.render();
+            taskManager.save();
         }
     });

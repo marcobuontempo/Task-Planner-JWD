@@ -62,7 +62,7 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
 
-    // IDK
+    // Finds Task by matching card info with stored array of tasks
     getTaskId(taskId) {
         let foundTask;
         
@@ -75,6 +75,19 @@ class TaskManager {
         });
         return foundTask;
     }
+
+    // Save to Local Storage
+    save() {
+        let tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks", tasksJson);
+
+        let currentId = this.currentId;
+        localStorage.setItem("currentId", currentId);
+    }
+
+    // Load from Local Storage
+
+
 }     
 
 
@@ -85,6 +98,7 @@ function submitForm () {
         clearForm();
         toggleTaskForm();
         taskManager.render();
+        taskManager.save();
     }
 };
 
