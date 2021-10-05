@@ -3,6 +3,10 @@
     // Initialise new TaskManager
     const taskManager = new TaskManager(0);
 
+    // Load Local Storage of Tasks and Render
+    taskManager.load();
+    taskManager.render();
+
     // Click "Save Task" button -> verifies form
     saveButton.addEventListener("click", submitForm);
 
@@ -43,5 +47,6 @@
             const task = taskManager.getTaskId(taskId);
             task.status = "done";
             taskManager.render();
+            taskManager.save();
         }
     });
