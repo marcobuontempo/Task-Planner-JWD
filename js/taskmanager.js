@@ -8,6 +8,7 @@ function createTask(title, description, assignedTo, dueDate, status, id) {
                 <p class="card-desc">${description}</p>
                 <p class="card-status status-${status}">${status.toUpperCase()}</p>
                 <img src="images/checkmark.png" alt="Done Button" class="done-button button-clicked-${status}">
+                <input type="image" src="images/delete.png" alt="Delete Button" class="delete-button">
             </div>
             <div class="card-footer footer-${status}">
                 <span class="card-due-date">${dueDate}</span>
@@ -117,10 +118,21 @@ class TaskManager {
             taskManager.render();
         } else {
             this.currentId = 0;
-        };
-
-
+        }
     }
+
+
+        deleteTask(taskId) {
+            const newTasks = [];
+            for(i=0; i<this.tasks.length; i++) {
+                const task = this.tasks[i];
+                if (task.id !== taskId) {
+                    newTasks.push(this.tasks[taskId])
+                } 
+            }
+            this.tasks = newTasks;
+        } 
+        
 
 }     
 
