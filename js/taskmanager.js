@@ -63,6 +63,92 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
 
+    // FILTER BY STATUS
+    toDoFilter() {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            if(this.tasks[i].status==="to-do") {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                formattedDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
+            tasksHtmlList.push(taskHtml);
+            }
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
+
+    inProgressFilter() {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            if(this.tasks[i].status==="in-progress") {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                formattedDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
+            tasksHtmlList.push(taskHtml);
+            }
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
+    
+    reviewFilter() {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            if(this.tasks[i].status==="review") {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                formattedDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
+            tasksHtmlList.push(taskHtml);
+            }
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
+
+    doneFilter() {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            if(this.tasks[i].status==="done") {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                formattedDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
+            tasksHtmlList.push(taskHtml);
+            }
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
+
+
     // Finds Task by matching card info with stored array of tasks
     getTaskId(taskId) {
         let foundTask;
@@ -122,17 +208,16 @@ class TaskManager {
     }
 
 
-        deleteTask(taskId) {
-            const newTasks = [];
-            for(let i=0; i<this.tasks.length; i++) {
-                const task = this.tasks[i];
-                if (task.id !== taskId) {
-                    newTasks.push(task)
-                } 
-            }
-            this.tasks = newTasks;
-        } 
-        
+    deleteTask(taskId) {
+        const newTasks = [];
+        for(let i=0; i<this.tasks.length; i++) {
+            const task = this.tasks[i];
+            if (task.id !== taskId) {
+                newTasks.push(task)
+            } 
+        }
+        this.tasks = newTasks;
+    }   
 
 }     
 

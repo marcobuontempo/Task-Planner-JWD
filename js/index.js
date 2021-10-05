@@ -60,3 +60,12 @@
             taskManager.save();
         }
     });
+
+
+    // Filter By Status
+    // TODO
+    document.querySelector("#to-do-filter").addEventListener("click", () => {taskManager.toDoFilter()})
+    document.querySelector("#in-progress-filter").addEventListener("click", () => {taskManager.inProgressFilter()})
+    document.querySelector("#review-filter").addEventListener("click", () => {taskManager.reviewFilter()})
+    document.querySelector("#done-filter").addEventListener("click", () => {taskManager.doneFilter()})
+    document.querySelector("#show-all-filter").addEventListener("click", () => {taskManager.render()})
