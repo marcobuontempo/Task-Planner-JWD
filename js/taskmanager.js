@@ -160,14 +160,17 @@ class TaskManager {
 
 
     deleteTask(taskId) {
-        const newTasks = [];
-        for(let i=0; i<this.tasks.length; i++) {
-            const task = this.tasks[i];
-            if (task.id !== taskId) {
-                newTasks.push(task)
-            } 
+        let result = window.confirm("Are you sure you want to delete this task?")
+        if (result) {
+            const newTasks = [];
+            for(let i=0; i<this.tasks.length; i++) {
+                const task = this.tasks[i];
+                if (task.id !== taskId) {
+                    newTasks.push(task)
+                } 
+            }
+            this.tasks = newTasks;
         }
-        this.tasks = newTasks;
     }   
 
 }     
