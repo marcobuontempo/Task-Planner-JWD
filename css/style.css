@@ -119,22 +119,39 @@ body {
     nav li {
       margin: 25px 10px;
       font-size: 1.2rem;
-      background-color: rgba(0,0,0,0.98);
+      background-color: rgba(36, 36, 36, 0.95);
       box-shadow: 0 0 15px black;
       border: 1px solid white;
       border-radius: 15px;
+    }
+
+    .filter-navs li {
+      font-style: italic;
+      margin: 10px 15px;
+      font-size: 1rem;
+    }
+
+    .filter-navs h1 {
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 2px;
     }
     
     #create-button {
       text-decoration: none;
       color: white;  
+      background-color: black;
       border: none;
       display: block;  
       padding: 15px;
       width: 100%;
       border-radius: 15px;
       font-size: 1.2rem;
-      background: none;
+      /* background: none; */
     } 
     
     nav a {
@@ -145,7 +162,7 @@ body {
     }
   
     /* Hover Effects on Sidebar Elements */
-    nav a:hover, #create-button:hover  {
+    #create-button:hover  {
       color: #C38181;
       font-size: 1.4rem;
       cursor: pointer;
@@ -153,6 +170,12 @@ body {
 
     nav li:hover {
       box-shadow: 0 0 15px white;
+    }
+
+    nav a:hover {
+      color: #C38181;
+      font-size: 1.2rem;
+      cursor: pointer;
     }
   
 
