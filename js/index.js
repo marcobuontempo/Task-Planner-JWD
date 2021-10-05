@@ -5,7 +5,6 @@
 
     // Load Local Storage of Tasks and Render
     taskManager.load();
-    taskManager.render();
 
     // Click "Save Task" button -> verifies form
     saveButton.addEventListener("click", submitForm);
@@ -46,6 +45,17 @@
             const taskId = Number(parentTask.dataset.taskId);
             const task = taskManager.getTaskId(taskId);
             task.status = "done";
+            taskManager.render();
+            taskManager.save();
+        }
+    });
+
+    // Event Listener for Delete Button. Removes Task after clicking Delete button
+    taskList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete-button")) {
+            const parentTask = event.target.parentElement.parentElement;
+            const taskId = Number(parentTask.dataset.taskId);
+            taskManager.deleteTask(taskId);
             taskManager.render();
             taskManager.save();
         }
