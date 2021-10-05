@@ -8,7 +8,7 @@ function createTask(title, description, assignedTo, dueDate, status, id) {
                 <p class="card-desc">${description}</p>
                 <p class="card-status status-${status}">${status.toUpperCase()}</p>
                 <img src="images/checkmark.png" alt="Done Button" class="done-button button-clicked-${status}">
-                <input type="image" src="images/delete.png" alt="Delete Button" class="delete-button">
+                <input type="image" src="images/delete.svg" alt="Delete Button" class="delete-button">
             </div>
             <div class="card-footer footer-${status}">
                 <span class="card-due-date">${dueDate}</span>
@@ -63,6 +63,29 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
 
+    // FILTER BY STATUS
+    renderByFilter(className) {
+        let tasksHtmlList = [];
+        for(let i = 0; i < this.tasks.length;i++) {
+            if(this.tasks[i].status===className) {
+            const date = new Date(this.tasks[i].dueDate);
+            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            const taskHtml = createTask(this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                formattedDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
+            tasksHtmlList.push(taskHtml);
+            }
+
+        }
+        const tasksHtml = tasksHtmlList.join("\n");
+        const taskCardList = document.getElementById("task-card-list");
+        taskCardList.innerHTML = tasksHtml;
+    }
+    
+
     // Finds Task by matching card info with stored array of tasks
     getTaskId(taskId) {
         let foundTask;
@@ -103,7 +126,7 @@ class TaskManager {
               <p class="card-desc">Press the burger icon on the left to create a new form :)</p>
               <p class="card-status">STATUS</p>
               <input type="image" src="images/checkmark.png" alt="Done Button" class="done-button">
-              <input type="image" src="images/delete.png" alt="Delete Button" class="delete-button">
+              <input type="image" src="images/delete.svg" alt="Delete Button" class="delete-button">
             </div>
             <div class="card-footer">
               <span class="card-due-date">Due Date</span><span class="card-assigned">Assigned To</span>
@@ -122,17 +145,16 @@ class TaskManager {
     }
 
 
-        deleteTask(taskId) {
-            const newTasks = [];
-            for(let i=0; i<this.tasks.length; i++) {
-                const task = this.tasks[i];
-                if (task.id !== taskId) {
-                    newTasks.push(task)
-                } 
-            }
-            this.tasks = newTasks;
-        } 
-        
+    deleteTask(taskId) {
+        const newTasks = [];
+        for(let i=0; i<this.tasks.length; i++) {
+            const task = this.tasks[i];
+            if (task.id !== taskId) {
+                newTasks.push(task)
+            } 
+        }
+        this.tasks = newTasks;
+    }   
 
 }     
 
