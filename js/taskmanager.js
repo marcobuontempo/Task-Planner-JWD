@@ -93,13 +93,31 @@ class TaskManager {
         if (localStorage.getItem("tasks")) {
             let tasksJson = localStorage.getItem("tasks");
             this.tasks = JSON.parse(tasksJson);
+            taskManager.render();
+        } else {
+            document.getElementById("task-card-list").innerHTML = `<div class="card" data-task-id="">
+            <img src="images/edit-icon.svg" alt="Edit button" class="edit-icon">
+            <div class="card-container">
+              <h1>Welcome</h1>
+              <p class="card-desc">Press the burger icon on the left to create a new form :)</p>
+              <p class="card-status">STATUS</p>
+              <input type="image" src="images/checkmark.png" alt="Done Button" class="done-button">
+            </div>
+            <div class="card-footer">
+              <span class="card-due-date">Due Date</span><span class="card-assigned">Assigned To</span>
+            </div>   
+          </div>`
         };
 
         // Check if currentId is stored, then retrieve/assign value
         if (localStorage.getItem("currentId")) {
             let currentId = localStorage.getItem("currentId");
             this.currentId = parseInt(currentId);
+            taskManager.render();
+        } else {
+            this.currentId = 0;
         };
+
 
     }
 

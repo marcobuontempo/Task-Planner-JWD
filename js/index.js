@@ -5,7 +5,6 @@
 
     // Load Local Storage of Tasks and Render
     taskManager.load();
-    taskManager.render();
 
     // Click "Save Task" button -> verifies form
     saveButton.addEventListener("click", submitForm);
