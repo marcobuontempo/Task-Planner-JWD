@@ -63,9 +63,17 @@
 
 
     // Filter By Status
-    // TODO
-    document.querySelector("#to-do-filter").addEventListener("click", () => {taskManager.toDoFilter()})
-    document.querySelector("#in-progress-filter").addEventListener("click", () => {taskManager.inProgressFilter()})
-    document.querySelector("#review-filter").addEventListener("click", () => {taskManager.reviewFilter()})
-    document.querySelector("#done-filter").addEventListener("click", () => {taskManager.doneFilter()})
-    document.querySelector("#show-all-filter").addEventListener("click", () => {taskManager.render()})
+        // TODO
+        document.querySelector("#to-do-filter").addEventListener("click", (event) => {taskManager.renderByFilter(event.target.className)})
+
+        // IN-PROGRESS
+        document.querySelector("#in-progress-filter").addEventListener("click", (event) => {taskManager.renderByFilter(event.target.className)})
+
+        // REVIEW
+        document.querySelector("#review-filter").addEventListener("click", (event) => {taskManager.renderByFilter(event.target.className)})
+
+        // DONE
+        document.querySelector("#done-filter").addEventListener("click", (event) => {taskManager.renderByFilter(event.target.className)})
+
+        // SHOW ALL
+        document.querySelector("#show-all-filter").addEventListener("click", () => {taskManager.render()})

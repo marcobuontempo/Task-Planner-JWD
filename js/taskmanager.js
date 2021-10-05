@@ -64,31 +64,10 @@ class TaskManager {
     }
 
     // FILTER BY STATUS
-    toDoFilter() {
+    renderByFilter(className) {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
-            if(this.tasks[i].status==="to-do") {
-            const date = new Date(this.tasks[i].dueDate);
-            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                formattedDate,
-                this.tasks[i].status,
-                this.tasks[i].id);
-            tasksHtmlList.push(taskHtml);
-            }
-
-        }
-        const tasksHtml = tasksHtmlList.join("\n");
-        const taskCardList = document.getElementById("task-card-list");
-        taskCardList.innerHTML = tasksHtml;
-    }
-
-    inProgressFilter() {
-        let tasksHtmlList = [];
-        for(let i = 0; i < this.tasks.length;i++) {
-            if(this.tasks[i].status==="in-progress") {
+            if(this.tasks[i].status===className) {
             const date = new Date(this.tasks[i].dueDate);
             const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             const taskHtml = createTask(this.tasks[i].title,
@@ -106,48 +85,6 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
     
-    reviewFilter() {
-        let tasksHtmlList = [];
-        for(let i = 0; i < this.tasks.length;i++) {
-            if(this.tasks[i].status==="review") {
-            const date = new Date(this.tasks[i].dueDate);
-            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                formattedDate,
-                this.tasks[i].status,
-                this.tasks[i].id);
-            tasksHtmlList.push(taskHtml);
-            }
-
-        }
-        const tasksHtml = tasksHtmlList.join("\n");
-        const taskCardList = document.getElementById("task-card-list");
-        taskCardList.innerHTML = tasksHtml;
-    }
-
-    doneFilter() {
-        let tasksHtmlList = [];
-        for(let i = 0; i < this.tasks.length;i++) {
-            if(this.tasks[i].status==="done") {
-            const date = new Date(this.tasks[i].dueDate);
-            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                formattedDate,
-                this.tasks[i].status,
-                this.tasks[i].id);
-            tasksHtmlList.push(taskHtml);
-            }
-
-        }
-        const tasksHtml = tasksHtmlList.join("\n");
-        const taskCardList = document.getElementById("task-card-list");
-        taskCardList.innerHTML = tasksHtml;
-    }
-
 
     // Finds Task by matching card info with stored array of tasks
     getTaskId(taskId) {
