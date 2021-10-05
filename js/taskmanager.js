@@ -124,10 +124,10 @@ class TaskManager {
 
         deleteTask(taskId) {
             const newTasks = [];
-            for(i=0; i<this.tasks.length; i++) {
+            for(let i=0; i<this.tasks.length; i++) {
                 const task = this.tasks[i];
                 if (task.id !== taskId) {
-                    newTasks.push(this.tasks[taskId])
+                    newTasks.push(task)
                 } 
             }
             this.tasks = newTasks;
