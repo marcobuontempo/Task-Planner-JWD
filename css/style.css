@@ -502,6 +502,76 @@ input[value="Save Task"]:hover {
 
   }
 
+/* help Form */
+
+
+#help-section{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 80%;
+  height: 90%;
+  max-height: 900px;
+ position: fixed;
+ top: 40px;
+ right: 100px;
+ background-color: white;
+}
+
+
+#help-section .topbar .close-section {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  z-index: 3;
+  right: 5px;
+  top: 5px;
+  border-radius: 50%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+#help-section .title-con{
+  height: 3%;
+  width: 100%;
+}
+
+#help-section .title-con p{
+  height: 100px;
+  font-size: xx-large;
+  font-weight: 800;
+  text-align: center;
+  padding-top: 3%;
+}
+#help-section .step-con {
+  display: flex;
+  padding-left: 3%;
+}
+
+#help-section .img-con1{
+  position: relative;
+  top: 75px;
+  width: 50%;
+}
+
+#help-section .img-con2{
+  position: relative;
+  top: 75px;
+  width: 45%;
+}
+#help-section img{
+  width: 300px;
+  height: 350px;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+}
+
+#help-section .video {
+  position: fixed;
+  top: 55%;
+  right: 17%;
+}
 
 
 /* Footer */
