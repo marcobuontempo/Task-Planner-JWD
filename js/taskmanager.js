@@ -139,8 +139,6 @@ class TaskManager {
               <h1>Welcome</h1>
               <p class="card-desc">Press the burger icon on the left to create a new form :)</p>
               <p class="card-status">STATUS</p>
-              <input type="image" src="images/checkmark.png" alt="Done Button" class="done-button">
-              <input type="image" src="images/delete.svg" alt="Delete Button" class="delete-button">
             </div>
             <div class="card-footer">
               <span class="card-due-date">Due Date</span><span class="card-assigned">Assigned To</span>
