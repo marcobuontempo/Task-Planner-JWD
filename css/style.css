@@ -291,7 +291,7 @@ body {
   /* Card Styling and Positioning (for elements inside Main Section [.card-container]) */
   .card h1 {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     padding: 10px;
     text-shadow: 2px 2px rgba(0,0,0,0.2);
   } 
