@@ -313,6 +313,16 @@ body {
     transition: opacity 0.3s, bottom 0.3s;
   }
 
+  /* Card contents non-clickable */
+  .card h1, .card-desc, .card-container, .card-footer, .card-due-date, .card-assigned {
+    pointer-events: none;
+  }
+
+  /* Card buttons clickable */
+  .delete-button, .done-button {
+    pointer-events: visible;
+  }
+
 
   /* Styling for each type of card status */
     .status-in-progress {
@@ -468,6 +478,7 @@ input[value="Delete Task"] {
   border-radius: 10px;
   margin: 10px;
   width: 100%;
+  display: none;
 }
 
 input[value="Delete Task"]:hover{
@@ -475,7 +486,7 @@ input[value="Delete Task"]:hover{
   background-color: rgb(140, 30, 30);
 }
 
-input[value="Save Task"] {
+input[value="Save Task"], input[value="Update Task"] {
   background-color: rgb(0, 128, 0);
   color: white;
   border-radius: 10px;
@@ -483,9 +494,13 @@ input[value="Save Task"] {
   width: 100%;
 }
 
-input[value="Save Task"]:hover {
+input[value="Save Task"]:hover, input[value="Update Task"]:hover  {
   cursor: pointer;
   background-color: rgb(0, 96, 0);
+}
+
+#updateTaskBtn {
+  display: none;
 }
 
 /* Toggle Blur Class */

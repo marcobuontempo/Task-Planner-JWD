@@ -42,7 +42,38 @@ class TaskManager {
           this.tasks.push(task);
     } 
 
-    // Render a HTML element
+    updateTask(title, description, assignedTo, dueDate, status, taskId, taskPosition) {
+        const task = {
+            id: taskId,
+            title: title,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status,
+          };
+      
+          this.tasks[taskPosition] = task;
+    }
+
+    // Method to delete task
+    deleteTask(taskId) {
+        let result = window.confirm("Are you sure you want to delete this task?")
+        if (result) {
+            const newTasks = [];
+            for(let i=0; i<this.tasks.length; i++) {
+                const task = this.tasks[i];
+                if (task.id !== taskId) {
+                    newTasks.push(task)
+                } 
+            }
+            this.tasks = newTasks;
+        clearForm();
+        this.render();
+        this.save();
+        }
+    }   
+
+    // Render task array into HTML display
     render() {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
@@ -77,7 +108,7 @@ class TaskManager {
         }
     }
 
-    // FILTER BY STATUS
+    // Method to filter by status
     renderByFilter(className) {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
@@ -99,8 +130,7 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
     
-
-    // Finds Task by matching card info with stored array of tasks
+    // Finds Task by matching card info with stored array of tasks. Returns the task object found
     getTaskId(taskId) {
         let foundTask;
         
@@ -112,6 +142,22 @@ class TaskManager {
         }
         });
         return foundTask;
+    }
+
+    // Finds Task by matching card info with stored array of tasks. Returns the index (i.e. position) of the card in the array
+    getTaskPosition(taskId) {
+        let foundIndex = 0;
+        
+        // Loops through task array
+        for (let i=0; i<this.tasks.length; i++) {
+            const task = this.tasks[i]
+            // When task selected is the same as array, return index number
+            if(task.id === taskId) {
+                foundIndex = i;
+            }
+        }
+
+        return foundIndex;
     }
 
     // Save to Local Storage
@@ -157,27 +203,29 @@ class TaskManager {
     }
 
 
-    deleteTask(taskId) {
-        let result = window.confirm("Are you sure you want to delete this task?")
-        if (result) {
-            const newTasks = [];
-            for(let i=0; i<this.tasks.length; i++) {
-                const task = this.tasks[i];
-                if (task.id !== taskId) {
-                    newTasks.push(task)
-                } 
-            }
-            this.tasks = newTasks;
-        }
-    }   
+
 
 }     
 
 
 // Submit Form Functions (validates inputs -> runs .addTask method)
-function submitForm () {
-    if (validateInput()===true) {
-        taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
+function submitForm (newTask) {
+    // Only run if input is valid
+    if (validateInput()) {
+        
+        // Add New Task
+        if(newTask === "new") {
+            taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);
+            window.alert(`Task created successfully! :)`);   
+        }
+
+        // Update Existing Task
+        if(newTask === "update") {
+            taskManager.updateTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value, updateTaskId, updateTaskPosition);
+            window.alert(`Task updated successfully! :)`);
+        }
+        
+        // Reset form to default, update tasks displayed, save to local storage
         clearForm();
         toggleTaskForm();
         taskManager.render();
@@ -188,7 +236,7 @@ function submitForm () {
 
 // Delete task and close form for click on top-right X
 function closeFormX () {
-    let result = window.confirm("Are you sure you want to close and delete form?")
+    let result = window.confirm("Are you sure you want to close and clear form?")
     if (result) {
         clearForm();
         toggleTaskForm();

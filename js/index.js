@@ -7,12 +7,10 @@
     taskManager.load();
 
     // Click "Save Task" button -> verifies form
-    saveButton.addEventListener("click", submitForm);
-
-    // Click "Delete Task" button
+    saveButton.addEventListener("click", () => submitForm("new"));
 
     // Click 'X' top-right of Form:
-        document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
+    document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
 
 
 
@@ -41,7 +39,7 @@
     // Event Listener for Done Button. Changes Task Status to "Done" after clicking Done button
     taskList.addEventListener("click", (event) => {
         if (event.target.classList.contains("done-button")) {
-            let result = window.confirm("Mark as Done?")
+            let result = window.confirm("Mark as 'Done'?")
         if (result) { 
             const parentTask = event.target.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
@@ -59,10 +57,55 @@
             const parentTask = event.target.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
             taskManager.deleteTask(taskId);
-            taskManager.render();
-            taskManager.save();
         }
     });
+
+
+   
+    // Update Tasks
+        // Initialise variables that will store the existing ID and array position of card to edit
+                let updateTaskId = 0;
+                let updateTaskPosition = 0;
+        // Event Listener to show form to Update Task info when card is clicked
+        taskList.addEventListener("click", (event) => {
+            // Only run if "card" element is clicked
+            if (event.target.classList.contains("card")) {
+                // Show form
+                toggleTaskForm();
+                
+                // Select card element and find it's id
+                const cardSelected = event.target;
+                updateTaskId = Number(cardSelected.dataset.taskId);
+
+                // Find card's stored info in tasks array. Assign to variable
+                const task = taskManager.getTaskId(updateTaskId);
+                updateTaskPosition = taskManager.getTaskPosition(updateTaskId);
+                
+                // Fill task form with existing info from selected card
+                formTitle.value = task.title;
+                formDescription.value = task.description;
+                formAssignedTo.value = task.assignedTo;
+                formDue.value = task.dueDate;
+                formStatus.value = task.status;
+
+                // Hide 'Save Task' Button and Show 'Update Task Button'      
+                saveButton.style.display = "none";
+                updateButton.style.display = "block";
+                deleteButton.style.display = "block";
+                
+            }
+        });
+        // Listener event when submitting updated task form
+        updateButton.addEventListener("click", () => submitForm("update", updateTaskId, updateTaskPosition))
+
+            // Click "Delete Task" button
+    deleteButton.addEventListener("click",  () => {
+        taskManager.deleteTask(updateTaskId)
+        taskManager.render();
+        taskManager.save();
+        toggleTaskForm();
+    });
+
 
 
     // Filter By Status

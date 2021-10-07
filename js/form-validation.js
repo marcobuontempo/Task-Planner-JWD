@@ -8,6 +8,7 @@ const formDue = document.getElementById("form-due");
 const formStatus = document.getElementById("form-status");
 const deleteButton = document.getElementById("deleteTaskBtn");
 const saveButton = document.getElementById("saveTaskBtn");
+const updateButton = document.getElementById("updateTaskBtn");
 const closeForm = document.getElementById("closeTaskForm");
 
 
@@ -74,7 +75,6 @@ function validateInput () {
         return false;
 
     } else {
-        window.alert(`Task created successfully! :)`); 
         return true;
     }
 };

@@ -24,6 +24,11 @@
         let x = document.getElementById("task-form");
             if (x.style.visibility === "visible") {
                 x.style.visibility = "hidden";
+                
+                // Ensure "Save Task" button is displayed by default      
+                saveButton.style.display = "block";
+                updateButton.style.display = "none";
+                deleteButton.style.display = "none";
             } else {
                 x.style.visibility = "visible";
             }
