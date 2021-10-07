@@ -75,7 +75,6 @@ function validateInput () {
         return false;
 
     } else {
-        window.alert(`Task created successfully! :)`); 
         return true;
     }
 };

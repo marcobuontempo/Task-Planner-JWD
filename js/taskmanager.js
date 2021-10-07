@@ -67,6 +67,9 @@ class TaskManager {
                 } 
             }
             this.tasks = newTasks;
+        clearForm();
+        this.render();
+        this.save();
         }
     }   
 
@@ -206,18 +209,20 @@ class TaskManager {
 
 
 // Submit Form Functions (validates inputs -> runs .addTask method)
-function submitForm (newTask, existingId, existingPosition) {
+function submitForm (newTask) {
     // Only run if input is valid
     if (validateInput()) {
         
         // Add New Task
         if(newTask === "new") {
-            taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
+            taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);
+            window.alert(`Task created successfully! :)`);   
         }
 
         // Update Existing Task
         if(newTask === "update") {
-            taskManager.updateTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value, existingId, existingPosition);
+            taskManager.updateTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value, updateTaskId, updateTaskPosition);
+            window.alert(`Task updated successfully! :)`);
         }
         
         // Reset form to default, update tasks displayed, save to local storage
@@ -231,7 +236,7 @@ function submitForm (newTask, existingId, existingPosition) {
 
 // Delete task and close form for click on top-right X
 function closeFormX () {
-    let result = window.confirm("Are you sure you want to close and delete form?")
+    let result = window.confirm("Are you sure you want to close and clear form?")
     if (result) {
         clearForm();
         toggleTaskForm();

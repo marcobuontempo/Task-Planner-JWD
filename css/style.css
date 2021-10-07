@@ -478,6 +478,7 @@ input[value="Delete Task"] {
   border-radius: 10px;
   margin: 10px;
   width: 100%;
+  display: none;
 }
 
 input[value="Delete Task"]:hover{

@@ -9,8 +9,6 @@
     // Click "Save Task" button -> verifies form
     saveButton.addEventListener("click", () => submitForm("new"));
 
-    // Click "Delete Task" button
-
     // Click 'X' top-right of Form:
     document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
 
@@ -41,7 +39,7 @@
     // Event Listener for Done Button. Changes Task Status to "Done" after clicking Done button
     taskList.addEventListener("click", (event) => {
         if (event.target.classList.contains("done-button")) {
-            let result = window.confirm("Mark as Done?")
+            let result = window.confirm("Mark as 'Done'?")
         if (result) { 
             const parentTask = event.target.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
@@ -59,8 +57,6 @@
             const parentTask = event.target.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
             taskManager.deleteTask(taskId);
-            taskManager.render();
-            taskManager.save();
         }
     });
 
@@ -79,7 +75,7 @@
                 
                 // Select card element and find it's id
                 const cardSelected = event.target;
-                const updateTaskId = Number(cardSelected.dataset.taskId);
+                updateTaskId = Number(cardSelected.dataset.taskId);
 
                 // Find card's stored info in tasks array. Assign to variable
                 const task = taskManager.getTaskId(updateTaskId);
@@ -95,10 +91,21 @@
                 // Hide 'Save Task' Button and Show 'Update Task Button'      
                 saveButton.style.display = "none";
                 updateButton.style.display = "block";
+                deleteButton.style.display = "block";
+                
             }
         });
         // Listener event when submitting updated task form
         updateButton.addEventListener("click", () => submitForm("update", updateTaskId, updateTaskPosition))
+
+            // Click "Delete Task" button
+    deleteButton.addEventListener("click",  () => {
+        taskManager.deleteTask(updateTaskId)
+        taskManager.render();
+        taskManager.save();
+        toggleTaskForm();
+    });
+
 
 
     // Filter By Status

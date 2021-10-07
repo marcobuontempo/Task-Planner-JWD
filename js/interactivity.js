@@ -28,6 +28,7 @@
                 // Ensure "Save Task" button is displayed by default      
                 saveButton.style.display = "block";
                 updateButton.style.display = "none";
+                deleteButton.style.display = "none";
             } else {
                 x.style.visibility = "visible";
             }
