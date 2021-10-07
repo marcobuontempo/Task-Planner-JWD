@@ -42,6 +42,19 @@ class TaskManager {
           this.tasks.push(task);
     } 
 
+    // updateTask() {
+    //     const task = {
+    //         id: 
+    //         title: title,
+    //         description: description,
+    //         assignedTo: assignedTo,
+    //         dueDate: dueDate,
+    //         status: status,
+    //       };
+      
+    //       this.tasks.push(task);
+    // }
+
     // Method to delete task
     deleteTask(taskId) {
         let result = window.confirm("Are you sure you want to delete this task?")
@@ -114,7 +127,7 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
     
-    // Finds Task by matching card info with stored array of tasks
+    // Finds Task by matching card info with stored array of tasks. Returns the task object found
     getTaskId(taskId) {
         let foundTask;
         
@@ -126,6 +139,22 @@ class TaskManager {
         }
         });
         return foundTask;
+    }
+
+    // Finds Task by matching card info with stored array of tasks. Returns the index (i.e. position) of the card in the array
+    getTaskPosition(taskId) {
+        let foundIndex = 0;
+        
+        // Loops through task array
+        for (let i=0; i<this.tasks.length; i++) {
+            const task = this.tasks[i]
+            // When task selected is the same as array, return index number
+            if(task.id === taskId) {
+                foundIndex = i;
+            }
+        }
+
+        return foundIndex;
     }
 
     // Save to Local Storage
@@ -178,7 +207,7 @@ class TaskManager {
 
 // Submit Form Functions (validates inputs -> runs .addTask method)
 function submitForm () {
-    if (validateInput()===true) {
+    if (validateInput()) {
         taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
         clearForm();
         toggleTaskForm();

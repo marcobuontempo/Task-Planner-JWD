@@ -85,6 +85,8 @@
             formAssignedTo.value = task.assignedTo;
             formDue.value = task.dueDate;
             formStatus.value = task.status;
+
+            console.log(taskManager.getTaskPosition(taskId))
         }
     })
 
