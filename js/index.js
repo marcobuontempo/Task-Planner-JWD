@@ -67,11 +67,15 @@
 
     // Event Listener to Update Task info when card is clicked
     taskList.addEventListener("click", (event) => {
+        // Only run if "card" element is clicked
         if (event.target.classList.contains("card")) {
-            const parentTask = event.target.parentElement.parentElement;
-            const taskId = Number(parentTask.dataset.taskId);
-            console.log(parentTask)
-    }
+            // Select card element and find it's id
+            const cardSelected = event.target;
+            const taskId = Number(cardSelected.dataset.taskId);
+
+            // Show form
+            toggleTaskForm();
+        }
     })
 
 
