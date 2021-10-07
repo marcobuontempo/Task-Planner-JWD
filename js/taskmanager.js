@@ -77,18 +77,53 @@ class TaskManager {
     render() {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
+
+            // Format each task before rendering (e.g. title is too long)
+            const title = this.tasks[i].title
+            let formattedTitle = ""; 
+                if(title.length > 15) {
+                    for(let i=0; i<15; i++) {
+                        formattedTitle += title[i];
+                    }
+                    formattedTitle += "...";
+                } else {
+                    formattedTitle = title;
+                }
+
+            const description = this.tasks[i].description;
+            let formattedDescription = ""; 
+                if(description.length > 500) {
+                    for(let i=0; i<500; i++) {
+                        formattedDescription += description[i];
+                    }
+                    formattedDescription += " ...";
+                } else {
+                    formattedDescription = description;
+                } 
+
+            const assigned = this.tasks[i].assignedTo;
+            let formattedAssigned = ""; 
+                if(assigned.length > 20) {
+                    for(let i=0; i<20; i++) {
+                        formattedAssigned += assigned[i];
+                    }
+                    formattedAssigned += "...";
+                } else {
+                    formattedAssigned = assigned;
+                }
+            
             const date = new Date(this.tasks[i].dueDate);
             const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                formattedDate,
-                this.tasks[i].status,
-                this.tasks[i].id);
+            
+            const status = this.tasks[i].status;
+
+            const id = this.tasks[i].id;
+            
+            // Create a HTML to represent the information retrieved and formatted above. Then push to a single array so that all HTML elements can be joined and rendered later.
+            const taskHtml = createTask(formattedTitle, formattedDescription, formattedAssigned, formattedDate, status, id);
             tasksHtmlList.push(taskHtml);
-
-
         }
+
         const tasksHtml = tasksHtmlList.join("\n");
         const taskCardList = document.getElementById("task-card-list");
         taskCardList.innerHTML = tasksHtml;
