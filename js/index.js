@@ -65,32 +65,40 @@
     });
 
 
-    // Event Listener to Update Task info when card is clicked
-    taskList.addEventListener("click", (event) => {
-        // Only run if "card" element is clicked
-        if (event.target.classList.contains("card")) {
-            // Show form
-            toggleTaskForm();
-            
-            // Select card element and find it's id
-            const cardSelected = event.target;
-            const taskId = Number(cardSelected.dataset.taskId);
+   
+    // Update Tasks
+        // Initialise variables that will store the existing ID and array position of card to edit
+                let updateTaskId = 0;
+                let updateTaskPosition = 0;
+        // Event Listener to show form to Update Task info when card is clicked
+        taskList.addEventListener("click", (event) => {
+            // Only run if "card" element is clicked
+            if (event.target.classList.contains("card")) {
+                // Show form
+                toggleTaskForm();
+                
+                // Select card element and find it's id
+                const cardSelected = event.target;
+                const updateTaskId = Number(cardSelected.dataset.taskId);
 
-            // Find card's stored info in tasks array. Assign to variable
-            const task = taskManager.getTaskId(taskId);
-            const taskPosition = taskManager.getTaskPosition(taskId);
-            
-            // Fill task form with existing info from selected card
-            formTitle.value = task.title;
-            formDescription.value = task.description;
-            formAssignedTo.value = task.assignedTo;
-            formDue.value = task.dueDate;
-            formStatus.value = task.status;
+                // Find card's stored info in tasks array. Assign to variable
+                const task = taskManager.getTaskId(updateTaskId);
+                updateTaskPosition = taskManager.getTaskPosition(updateTaskId);
+                
+                // Fill task form with existing info from selected card
+                formTitle.value = task.title;
+                formDescription.value = task.description;
+                formAssignedTo.value = task.assignedTo;
+                formDue.value = task.dueDate;
+                formStatus.value = task.status;
 
-            // Submit Form
-            submitForm("update", taskId, taskPosition);
-        }
-    })
+                // Hide 'Save Task' Button and Show 'Update Task Button'      
+                saveButton.style.display = "none";
+                
+            }
+        });
+        // Listener event when submitting updated task form
+
 
 
     // Filter By Status
