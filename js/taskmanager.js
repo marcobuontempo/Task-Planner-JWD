@@ -211,12 +211,12 @@ function submitForm (newTask, existingId, existingPosition) {
     if (validateInput()) {
         
         // Add New Task
-        if(newTask = "new") {
+        if(newTask === "new") {
             taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
         }
 
         // Update Existing Task
-        if(newTask = "update") {
+        if(newTask === "update") {
             taskManager.updateTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value, existingId, existingPosition);
         }
         

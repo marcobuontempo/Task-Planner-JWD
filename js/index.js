@@ -12,7 +12,7 @@
     // Click "Delete Task" button
 
     // Click 'X' top-right of Form:
-        document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
+    document.getElementById("closeTaskForm").addEventListener("click", closeFormX);
 
 
 
@@ -94,11 +94,11 @@
 
                 // Hide 'Save Task' Button and Show 'Update Task Button'      
                 saveButton.style.display = "none";
-                
+                updateButton.style.display = "block";
             }
         });
         // Listener event when submitting updated task form
-
+        updateButton.addEventListener("click", () => submitForm("update", updateTaskId, updateTaskPosition))
 
 
     // Filter By Status
