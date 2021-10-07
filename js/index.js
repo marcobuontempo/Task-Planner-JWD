@@ -7,7 +7,7 @@
     taskManager.load();
 
     // Click "Save Task" button -> verifies form
-    saveButton.addEventListener("click", submitForm);
+    saveButton.addEventListener("click", () => submitForm("new"));
 
     // Click "Delete Task" button
 
@@ -78,6 +78,7 @@
 
             // Find card's stored info in tasks array. Assign to variable
             const task = taskManager.getTaskId(taskId);
+            const taskPosition = taskManager.getTaskPosition(taskId);
             
             // Fill task form with existing info from selected card
             formTitle.value = task.title;
@@ -86,7 +87,8 @@
             formDue.value = task.dueDate;
             formStatus.value = task.status;
 
-            console.log(taskManager.getTaskPosition(taskId))
+            // Submit Form
+            submitForm("update", taskId, taskPosition);
         }
     })
 

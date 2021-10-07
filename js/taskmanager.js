@@ -42,18 +42,18 @@ class TaskManager {
           this.tasks.push(task);
     } 
 
-    // updateTask() {
-    //     const task = {
-    //         id: 
-    //         title: title,
-    //         description: description,
-    //         assignedTo: assignedTo,
-    //         dueDate: dueDate,
-    //         status: status,
-    //       };
+    updateTask(title, description, assignedTo, dueDate, status, taskId, taskPosition) {
+        const task = {
+            id: taskId,
+            title: title,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status,
+          };
       
-    //       this.tasks.push(task);
-    // }
+          this.tasks[taskPosition] = task;
+    }
 
     // Method to delete task
     deleteTask(taskId) {
@@ -206,9 +206,21 @@ class TaskManager {
 
 
 // Submit Form Functions (validates inputs -> runs .addTask method)
-function submitForm () {
+function submitForm (newTask, existingId, existingPosition) {
+    // Only run if input is valid
     if (validateInput()) {
-        taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
+        
+        // Add New Task
+        if(newTask = "new") {
+            taskManager.addTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value);      
+        }
+
+        // Update Existing Task
+        if(newTask = "update") {
+            taskManager.updateTask(formTitle.value, formDescription.value, formAssignedTo.value, formDue.value, formStatus.value, existingId, existingPosition);
+        }
+        
+        // Reset form to default, update tasks displayed, save to local storage
         clearForm();
         toggleTaskForm();
         taskManager.render();
