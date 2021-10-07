@@ -65,6 +65,16 @@
     });
 
 
+    // Event Listener to Update Task info when card is clicked
+    taskList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("card")) {
+            const parentTask = event.target.parentElement.parentElement;
+            const taskId = Number(parentTask.dataset.taskId);
+            console.log(parentTask)
+    }
+    })
+
+
     // Filter By Status
         // TODO
         document.querySelector("#to-do-filter").addEventListener("click", (event) => {taskManager.renderByFilter(event.target.className)})

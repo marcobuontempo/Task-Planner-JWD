@@ -313,6 +313,16 @@ body {
     transition: opacity 0.3s, bottom 0.3s;
   }
 
+  /* Card contents non-clickable */
+  .card h1, .card-desc, .card-container, .card-footer, .card-due-date, .card-assigned {
+    pointer-events: none;
+  }
+
+  /* Card buttons clickable */
+  .delete-button, .done-button {
+    pointer-events: visible;
+  }
+
 
   /* Styling for each type of card status */
     .status-in-progress {
