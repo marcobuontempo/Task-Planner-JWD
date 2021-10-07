@@ -42,7 +42,22 @@ class TaskManager {
           this.tasks.push(task);
     } 
 
-    // Render a HTML element
+    // Method to delete task
+    deleteTask(taskId) {
+        let result = window.confirm("Are you sure you want to delete this task?")
+        if (result) {
+            const newTasks = [];
+            for(let i=0; i<this.tasks.length; i++) {
+                const task = this.tasks[i];
+                if (task.id !== taskId) {
+                    newTasks.push(task)
+                } 
+            }
+            this.tasks = newTasks;
+        }
+    }   
+
+    // Render task array into HTML display
     render() {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
@@ -77,7 +92,7 @@ class TaskManager {
         }
     }
 
-    // FILTER BY STATUS
+    // Method to filter by status
     renderByFilter(className) {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
@@ -99,7 +114,6 @@ class TaskManager {
         taskCardList.innerHTML = tasksHtml;
     }
     
-
     // Finds Task by matching card info with stored array of tasks
     getTaskId(taskId) {
         let foundTask;
@@ -157,19 +171,7 @@ class TaskManager {
     }
 
 
-    deleteTask(taskId) {
-        let result = window.confirm("Are you sure you want to delete this task?")
-        if (result) {
-            const newTasks = [];
-            for(let i=0; i<this.tasks.length; i++) {
-                const task = this.tasks[i];
-                if (task.id !== taskId) {
-                    newTasks.push(task)
-                } 
-            }
-            this.tasks = newTasks;
-        }
-    }   
+
 
 }     
 

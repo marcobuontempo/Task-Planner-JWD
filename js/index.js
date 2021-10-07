@@ -69,12 +69,22 @@
     taskList.addEventListener("click", (event) => {
         // Only run if "card" element is clicked
         if (event.target.classList.contains("card")) {
+            // Show form
+            toggleTaskForm();
+            
             // Select card element and find it's id
             const cardSelected = event.target;
             const taskId = Number(cardSelected.dataset.taskId);
 
-            // Show form
-            toggleTaskForm();
+            // Find card's stored info in tasks array. Assign to variable
+            const task = taskManager.getTaskId(taskId);
+            
+            // Fill task form with existing info from selected card
+            formTitle.value = task.title;
+            formDescription.value = task.description;
+            formAssignedTo.value = task.assignedTo;
+            formDue.value = task.dueDate;
+            formStatus.value = task.status;
         }
     })
 
