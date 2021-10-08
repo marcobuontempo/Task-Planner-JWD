@@ -7,7 +7,7 @@ function createTask(title, description, assignedTo, dueDate, status, id) {
                 <h1>${title}</h1>
                 <p class="card-desc">${description}</p>
                 <p class="card-status status-${status}">${status.toUpperCase()}</p>
-                <img src="images/checkmark.png" alt="Done Button" class="done-button button-clicked-${status}">
+                <input type="image" src="images/checkmark.png" alt="Done Button" class="done-button button-clicked-${status}">
                 <input type="image" src="images/delete.svg" alt="Delete Button" class="delete-button">
             </div>
             <div class="card-footer footer-${status}">
@@ -77,51 +77,23 @@ class TaskManager {
     render() {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
-
-            // Format each task before rendering (e.g. title is too long)
-            const title = this.tasks[i].title
-            let formattedTitle = ""; 
-                if(title.length > 15) {
-                    for(let i=0; i<15; i++) {
-                        formattedTitle += title[i];
-                    }
-                    formattedTitle += "...";
-                } else {
-                    formattedTitle = title;
-                }
-
-            const description = this.tasks[i].description;
-            let formattedDescription = ""; 
-                if(description.length > 500) {
-                    for(let i=0; i<500; i++) {
-                        formattedDescription += description[i];
-                    }
-                    formattedDescription += " ...";
-                } else {
-                    formattedDescription = description;
-                } 
-
-            const assigned = this.tasks[i].assignedTo;
-            let formattedAssigned = ""; 
-                if(assigned.length > 20) {
-                    for(let i=0; i<20; i++) {
-                        formattedAssigned += assigned[i];
-                    }
-                    formattedAssigned += "...";
-                } else {
-                    formattedAssigned = assigned;
-                }
             
-            const date = new Date(this.tasks[i].dueDate);
-            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            let formattedValues = shortenCardValues(
+                this.tasks[i].title,
+                this.tasks[i].description,
+                this.tasks[i].assignedTo,
+                this.tasks[i].dueDate,
+                this.tasks[i].status,
+                this.tasks[i].id);
             
-            const status = this.tasks[i].status;
-
-            const id = this.tasks[i].id;
             
             // Create a HTML to represent the information retrieved and formatted above. Then push to a single array so that all HTML elements can be joined and rendered later.
-            const taskHtml = createTask(formattedTitle, formattedDescription, formattedAssigned, formattedDate, status, id);
+            const taskHtml = createTask(formattedValues.title, formattedValues.description, formattedValues.assigned, formattedValues.date, formattedValues.status, formattedValues.id);
             tasksHtmlList.push(taskHtml);
+
+            // Set current menu filter to display "Show All"
+            const currentFilter = document.getElementById("current-filter");
+            currentFilter.innerHTML = "Show All";
         }
 
         const tasksHtml = tasksHtmlList.join("\n");
@@ -148,21 +120,29 @@ class TaskManager {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
             if(this.tasks[i].status===className) {
-            const date = new Date(this.tasks[i].dueDate);
-            const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTask(this.tasks[i].title,
-                this.tasks[i].description,
-                this.tasks[i].assignedTo,
-                formattedDate,
-                this.tasks[i].status,
-                this.tasks[i].id);
-            tasksHtmlList.push(taskHtml);
+                let formattedValues = shortenCardValues(
+                    this.tasks[i].title,
+                    this.tasks[i].description,
+                    this.tasks[i].assignedTo,
+                    this.tasks[i].dueDate,
+                    this.tasks[i].status,
+                    this.tasks[i].id);
+                
+                
+                // Create a HTML to represent the information retrieved and formatted above. Then push to a single array so that all HTML elements can be joined and rendered later.
+                const taskHtml = createTask(formattedValues.title, formattedValues.description, formattedValues.assigned, formattedValues.date, formattedValues.status, formattedValues.id)
+                tasksHtmlList.push(taskHtml);
             }
 
         }
         const tasksHtml = tasksHtmlList.join("\n");
         const taskCardList = document.getElementById("task-card-list");
         taskCardList.innerHTML = tasksHtml;
+
+        // Set current menu filter to display correct value
+        const currentFilter = document.getElementById("current-filter");
+        currentFilter.innerHTML = className;
+
     }
     
     // Finds Task by matching card info with stored array of tasks. Returns the task object found
@@ -242,6 +222,47 @@ class TaskManager {
 
 }     
 
+
+// Shorten values to render neatly
+function shortenCardValues (title, description, assigned, dueDate, status, id) {
+    // Assign HTML to display when value is formatted and shortened
+    const extraWords = "<span style='color: lightgrey'> ...</span>"
+
+    // Format each task before rendering (e.g. title is too long)
+    let formattedTitle = ""; 
+        if(title.length > 30) {
+            formattedTitle = title.substring(0,30) + extraWords;
+        } else {
+            formattedTitle = title;
+        }
+
+    let formattedDescription = ""; 
+        if(description.length > 300) {
+            formattedDescription = description.substring(0,300) + extraWords;
+        } else {
+            formattedDescription = description;
+        } 
+
+    let formattedAssigned = ""; 
+        if(assigned.length > 20) {
+            formattedAssigned = assigned.substring(0,20) + extraWords;
+        } else {
+            formattedAssigned = assigned;
+        }
+    
+    const date = new Date(dueDate);
+    const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    
+    let formattedValues = {
+        title: formattedTitle, 
+        description: formattedDescription, 
+        assigned: formattedAssigned, 
+        date: formattedDate, 
+        status: status, 
+        id: id};
+
+    return formattedValues;
+}
 
 // Submit Form Functions (validates inputs -> runs .addTask method)
 function submitForm (newTask) {
