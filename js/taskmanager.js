@@ -83,16 +83,16 @@ class TaskManager {
             // Format each task before rendering (e.g. title is too long)
             const title = this.tasks[i].title
             let formattedTitle = ""; 
-                if(title.length > 50) {
-                    formattedTitle = title.substring(0,50) + extraWords;
+                if(title.length > 30) {
+                    formattedTitle = title.substring(0,30) + extraWords;
                 } else {
                     formattedTitle = title;
                 }
 
             const description = this.tasks[i].description;
             let formattedDescription = ""; 
-                if(description.length > 500) {
-                    formattedDescription = description.substring(0,400) + extraWords;
+                if(description.length > 300) {
+                    formattedDescription = description.substring(0,300) + extraWords;
                 } else {
                     formattedDescription = description;
                 } 
