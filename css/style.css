@@ -140,6 +140,12 @@ body {
       border-radius: 10px;
       padding: 2px;
     }
+
+    .filter-navs #current-filter {
+      font-weight: normal;
+      font-style: italic;
+      text-transform: capitalize;
+    }
     
     #create-button {
       text-decoration: none;
