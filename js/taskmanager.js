@@ -77,12 +77,14 @@ class TaskManager {
     render() {
         let tasksHtmlList = [];
         for(let i = 0; i < this.tasks.length;i++) {
-
+            // Assign HTML to display when value is formatted and shortened
+            const extraWords = "<span style='color: lightgrey'> ...</span>"
+            
             // Format each task before rendering (e.g. title is too long)
             const title = this.tasks[i].title
             let formattedTitle = ""; 
-                if(title.length > 15) {
-                    formattedTitle = title.substring(0, 15) + "...";
+                if(title.length > 50) {
+                    formattedTitle = title.substring(0,50) + extraWords;
                 } else {
                     formattedTitle = title;
                 }
@@ -90,7 +92,7 @@ class TaskManager {
             const description = this.tasks[i].description;
             let formattedDescription = ""; 
                 if(description.length > 500) {
-                    formattedDescription = description.substring(0, 250) + "...";
+                    formattedDescription = description.substring(0,400) + extraWords;
                 } else {
                     formattedDescription = description;
                 } 
@@ -98,7 +100,7 @@ class TaskManager {
             const assigned = this.tasks[i].assignedTo;
             let formattedAssigned = ""; 
                 if(assigned.length > 20) {
-                    formattedAssigned = assigned.substring(0,20) + "...";
+                    formattedAssigned = assigned.substring(0,20) + extraWords;
                 } else {
                     formattedAssigned = assigned;
                 }
