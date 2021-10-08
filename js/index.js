@@ -51,6 +51,49 @@
         }
     });
 
+
+    // Event Listener to show button information when hover over
+    taskList.addEventListener("mouseover", (event) => {
+        const parentTask = event.target.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        const altText = document.querySelector(`.button-alt-text-id${taskId}`);
+        
+        if (event.target.classList.contains("done-button")) {
+            // Show button
+            altText.innerHTML = "Mark as Done?";
+            altText.style.visibility = "visible";
+            altText.style.color = "green";
+        }
+
+        if (event.target.classList.contains("delete-button")) {
+            // Show button
+            altText.innerHTML = "Delete Task?";
+            altText.style.visibility = "visible";
+            altText.style.color = "red";
+        }
+    });
+
+
+    // Event Listener to show button information when hover over
+    taskList.addEventListener("mouseout", (event) => {
+        const parentTask = event.target.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        const altText = document.querySelector(`.button-alt-text-id${taskId}`);
+        
+        if (event.target.classList.contains("done-button")) {
+            // Show button
+            altText.innerHTML = "";
+            altText.style.visibility = "hidden";
+        }
+
+        if (event.target.classList.contains("delete-button")) {
+            // Show button
+            altText.innerHTML = "";
+            altText.style.visibility = "hidden";
+        }
+    });
+    
+
     // Event Listener for Delete Button. Removes Task after clicking Delete button
     taskList.addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-button")) {
@@ -98,13 +141,13 @@
         // Listener event when submitting updated task form
         updateButton.addEventListener("click", () => submitForm("update", updateTaskId, updateTaskPosition))
 
-            // Click "Delete Task" button
-    deleteButton.addEventListener("click",  () => {
-        taskManager.deleteTask(updateTaskId)
-        taskManager.render();
-        taskManager.save();
-        toggleTaskForm();
-    });
+        // Click "Delete Task" button
+        deleteButton.addEventListener("click",  () => {
+            taskManager.deleteTask(updateTaskId)
+            taskManager.render();
+            taskManager.save();
+            toggleTaskForm();
+        });
 
 
 
