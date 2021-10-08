@@ -82,10 +82,7 @@ class TaskManager {
             const title = this.tasks[i].title
             let formattedTitle = ""; 
                 if(title.length > 15) {
-                    for(let i=0; i<15; i++) {
-                        formattedTitle += title[i];
-                    }
-                    formattedTitle += "...";
+                    formattedTitle = title.substring(0, 15) + "...";
                 } else {
                     formattedTitle = title;
                 }
@@ -93,10 +90,7 @@ class TaskManager {
             const description = this.tasks[i].description;
             let formattedDescription = ""; 
                 if(description.length > 500) {
-                    for(let i=0; i<500; i++) {
-                        formattedDescription += description[i];
-                    }
-                    formattedDescription += " ...";
+                    formattedDescription = description.substring(0, 250) + "...";
                 } else {
                     formattedDescription = description;
                 } 
@@ -104,10 +98,7 @@ class TaskManager {
             const assigned = this.tasks[i].assignedTo;
             let formattedAssigned = ""; 
                 if(assigned.length > 20) {
-                    for(let i=0; i<20; i++) {
-                        formattedAssigned += assigned[i];
-                    }
-                    formattedAssigned += "...";
+                    formattedAssigned = assigned.substring(0,20) + "...";
                 } else {
                     formattedAssigned = assigned;
                 }
