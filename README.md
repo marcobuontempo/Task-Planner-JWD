@@ -17,7 +17,7 @@
 
 ## **Installation**
 - HTML5, CSS3 and Javascript were used to create this website.
-- The website has been deployed through Github Pages, so simply open in browser (https://marcobuontempo.github.io/GAfinalproject/).
+- The website has been deployed through Github Pages, so simply open in browser (https://marcobuontempo.github.io/Task-Planner-JWD/).
 - Use a modern browser (i.e. Chrome) for best experience.
 
 
